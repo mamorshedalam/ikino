@@ -842,6 +842,10 @@ a,
   margin-bottom: 2.25rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1304,6 +1308,10 @@ a,
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1502,6 +1510,10 @@ a,
     width: 100%;
   }
 
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .md\:rounded-xl {
     border-radius: 0.75rem;
   }
@@ -1570,6 +1582,10 @@ a,
 
   .md\:pt-4 {
     padding-top: 1rem;
+  }
+
+  .md\:pr-10 {
+    padding-right: 2.5rem;
   }
 
   .md\:text-left {
