@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- TITLE & FAVICON -->
+     <link rel="icon" href="./assets/img/logo.png" />
+     <title>Ikino || Services</title>
+
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+     <!-- GOOGLE FONTS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+     <!-- TAILWIND CSS -->
+     <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- ALPINE JS -->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{sidebar: false}">
+
+     <!-- SIDEBAR -->
+     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+          <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
+          <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
+               <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
+               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
+               <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="blog.html" class="font-semibold py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
+          </ul>
+     </aside>
+     <!-- SIDEBAR -->
+
+     <!-- HEADER -->
+     <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
+          <nav class="sl-container">
+               <ul class="md:flex hidden items-center justify-between text-sm">
+                    <li><a href="index.html" class="py-2 px-4 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="py-2 px-4 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
+                    <li><a href="service.html" class="py-2 px-4 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="font-semibold py-2 px-4 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
+               </ul>
+               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
+          </nav>
+     </header>
+     <!-- HEADER -->
+
+     <!-- MAIN -->
+     <main class="mt-16 text-dark bg-light">
+          <!-- HERO -->
+          <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-60 md:py-40 py-20 before:absolute before:inset-0 before:bg-dark/85"
+               style="background-image: url(assets/img/hero-3.png);">
+               <div class="relative sl-container text-center z-10">
+                    <h2 class="lg:text-5xl sm:text-3xl text-2xl font-bold md:mb-6 mb-4">LETS GET TO KNOW EACH OTHER</h2>
+                    <p class="lg:text-xl md:text-lg text-base font-light">Ready to launch your project? Contact us, and we will respond within 24 hours.</p>
+               </div>
+          </section>
+          <!-- HERO -->
+
+          <!-- MARQUEE -->
+          <section class="overflow-hidden bg-slate text-light">
+               <div class="sl-marque-text">
+                    <ul>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                    </ul>
+               </div>
+          </section>
+          <!-- MARQUEE -->
+
+          <!-- FORM -->
+          <section class="md:py-20 py-12">
+               <div class="sl-container">
+                    <div class="text-center md:mb-12 mb-8">
+                         <h2 class="text-4xl font-medium mb-6">INQUIRE FORM</h2>
+                         <p class="max-w-xl font-light mx-auto">Please complete the form below to provide more details about the service you're seeking. I will get in touch with you at the earliest
+                              opportunity.</p>
+                    </div>
+                    <div class="flex flex-wrap font-light">
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="firstName">Fast Name</label>
+                              <input id="firstName" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="lastName">Last Name</label>
+                              <input id="lastName" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="email">Email</label>
+                              <input id="email" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="brand">Company / Brand Name</label>
+                              <input id="brand" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="location">Location</label>
+                              <input id="location" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="phone">Phone</label>
+                              <input id="phone" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <p class="mb-2">Are you an online or offline store</p>
+                              <input type="radio" name="store" id="online" value="online" class="w-4 h-4 mr-2">
+                              <label for="online">Online</label>
+                              <input type="radio" name="store" id="offline" value="offline" class="w-4 h-4 ml-12 mr-2">
+                              <label for="offline">Offline</label>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <p class="mb-2">Does your brand have social media ?</p>
+                              <input type="radio" name="media" id="yes" value="yes" class="w-4 h-4 mr-2">
+                              <label for="yes">Yes</label>
+                              <input type="radio" name="media" id="no" value="no" class="w-4 h-4 ml-12 mr-2">
+                              <label for="no">No</label>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="message">Tell me more about your business ? <span class="text-sm">(what do your offer ? What do you sell ? What is your main objective)</span></label>
+                              <textarea id="message" class="w-full rounded-md py-1 px-3 md:h-40 h-28 border-2 border-dark mt-2"></textarea>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="target">What’s your target audience ?</label>
+                              <input id="target" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="message">How would you describe your brand’s style ? <span class="text-sm"></span>(minimalist, colorful, neutral, old school...)</span></label>
+                              <input id="target" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <p class="mb-2">What services do you need ?</p>
+                              <div class="mb-2">
+                                   <input type="checkbox" name="service" id="branding" class="w-4 h-4 mr-2">
+                                   <label for="branding">Branding</label>
+                              </div>
+                              <div class="mb-2">
+                                   <input type="checkbox" name="service" id="print" class="w-4 h-4 mr-2">
+                                   <label for="print">Print</label>
+                              </div>
+                              <div class="mb-2">
+                                   <input type="checkbox" name="service" id="packing" class="w-4 h-4 mr-2">
+                                   <label for="packing">Packaging</label>
+                              </div>
+                              <div class="mb-2">
+                                   <input type="checkbox" name="service" id="social" class="w-4 h-4 mr-2">
+                                   <label for="social">Social Media</label>
+                              </div>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="question">Do you have any questions for me ?</label>
+                              <textarea id="question" class="w-full rounded-md py-1 px-3 md:h-40 h-28 border-2 border-dark mt-2"></textarea>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <p class="text-xs italic opacity-75">N.B : I prioritize ethical partnerships, selectively engaging with clients and declining those who promote alcohol, violence, or
+                                   values misaligned with ours. Thank you for your understanding.</p>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <a href="" class="bg-slate text-light py-2 px-6 rounded-md hover:bg-slate/85">Send</a>
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <!-- FORM -->
+     </main>
+     <!-- MAIN -->
+
+     <!-- FOOTER -->
+     <footer class="pt-10">
+          <div class="sl-container">
+               <div class="flex flex-wrap items-center">
+                    <div class="sm:w-auto w-full sm:mb-0 mb-4">
+                         <a href="" class="w-20 mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
+                    </div>
+                    <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
+                         <ul class="flex flex-wrap">
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="text-sm hover:opacity-75">Home</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="text-sm hover:opacity-75">Work with me</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Instagram</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="text-sm hover:opacity-75">Portfolio</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="text-sm hover:opacity-75">Blog</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="text-sm hover:opacity-75">Branding</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="text-sm hover:opacity-75">Web Design</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="text-sm hover:opacity-75">About me</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <p class="w-full sm:text-right text-center py-4">All rights reserved </p>
+          </div>
+     </footer>
+     <!-- FOOTER -->
+</body>
+
+</html>
