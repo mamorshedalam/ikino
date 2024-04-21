@@ -23,12 +23,27 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body x-data="{sidebar: false}">
+
+     <!-- SIDEBAR -->
+     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+          <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
+          <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
+               <li><a href="" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
+               <li><a href="" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
+               <li><a href="" class="py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="" class="py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="" class="py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
+          </ul>
+     </aside>
+     <!-- SIDEBAR -->
 
      <!-- HEADER -->
      <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
           <nav class="sl-container">
-               <ul class="flex items-center justify-between text-sm">
+               <ul class="md:flex hidden items-center justify-between text-sm">
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Home</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">About me</a></li>
@@ -37,6 +52,8 @@
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Blog</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
                </ul>
+               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
      <!-- HEADER -->
@@ -44,9 +61,9 @@
      <!-- MAIN -->
      <main class="mt-16">
           <!-- HERO -->
-          <section class="bg-cover bg-center bg-no-repeat pt-40 pb-20" style="background-image: url(assets/img/hero.png);">
+          <section class="bg-cover bg-center bg-no-repeat lg:pt-40 md:pt-28 md:pb-20 py-12" style="background-image: url(assets/img/hero.png);">
                <div class="sl-container text-center">
-                    <h1 class="text-7xl leading-relaxed mb-20">Let’s Create Inspiring Designs With Lasting Impression</h1>
+                    <h1 class="lg:text-7xl md:text-5xl sm:text-3xl text-2xl leading-relaxed lg:mb-20 md:mb-16 sm:mb-8 mb-5">Let’s Create Inspiring Designs With Lasting Impression</h1>
                     <a href="" class="bg-dark py-2 px-6 rounded-md hover:bg-dark/85">Let’s work together</a>
                </div>
           </section>
@@ -119,20 +136,23 @@
           <!-- SLIDER -->
 
           <!-- ABOUT -->
-          <section class="text-dark bg-gray py-20">
+          <section class="text-dark bg-gray md:py-20 py-12">
                <div class="sl-container">
                     <div class="flex flex-wrap items-center">
-                         <div class="w-3/5">
-                              <h2 class="text-7xl mb-6">Ikino Design Co</h2>
-                              <p class="w-4/5 font-light mb-12">Bienvenue sur le portfolio d'Ikino, une talentueuse web et graphic designer diplômée avec distinction. Forte d'une expérience variée,
+                         <div class="lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
+                              <h2 class="lg:text-7xl md:text-5xl sm:text-3xl text-2xl md:mb-6 mb-4">Ikino Design Co</h2>
+                              <p class="lg:w-4/5 font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Bienvenue sur le portfolio d'Ikino, une talentueuse web et graphic designer diplômée avec
+                                   distinction. Forte
+                                   d'une
+                                   expérience variée,
                                    Ikino
                                    excelle dans la création
                                    d'interfaces web intuitives et de designs graphiques percutants. Son engagement envers l'excellence artistique transparaît à travers une série de projets réussis,
                                    démontrant sa capacité à traduire les besoins spécifiques des clients en créations visuelles remarquables. Explorez ce portfolio pour découvrir l'expertise unique
                                    d'Ikino, où chaque projet devient une fusion de créativité et de fonctionnalité, captivant le regard et offrant une expérience visuelle mémorable.</p>
-                              <a href="" class="bg-slate text-light py-2 px-6 rounded-md hover:bg-slate/85">Let’s work together</a>
+                              <a href="" class="bg-slate text-light py-2 px-6 rounded-md hover:bg-slate/85">More about me</a>
                          </div>
-                         <div class="w-2/5"><img src="assets/img/imageaboutme.png" alt=""></div>
+                         <div class="md:block hidden lg:w-2/5 md:w-1/2 w-full md:pl-3"><img src="assets/img/imageaboutme.png" alt=""></div>
                     </div>
                </div>
           </section>
@@ -183,65 +203,77 @@
           <!-- MARQUEE -->
 
           <!-- SERVICE -->
-          <section class="bg-neutral pt-40 pb-20">
+          <section class="bg-neutral lg:pt-40 md:py-20 py-12">
                <div class="sl-container">
-                    <h2 class="text-7xl mb-12">What do we provide</h2>
-                    <div class="flex flex-wrap items-center">
-                         <div class="w-2/5"><img src="assets/img/imageprovide.png" alt=""></div>
-                         <div class="w-3/5 pl-10">
-                              <ul class="font-light" x-data="{active: 0}">
-                                   <li class="mb-6 overflow-hidden">
-                                        <button @click="active == 1 ? active = 0 : active = 1" :class="active == 1 ? 'border-none' : 'border-b'"
-                                             class="w-full flex items-center justify-between text-left text-2xl border-light py-2">
-                                             Branding
-                                             <span><img class="w-5" src="assets/img/arrow_down.svg" alt=""></span>
-                                        </button>
-                                        <p :class="active == 1 ? 'max-h-80 py-6':'max-h-0 py-0'" class="bg-light/50 text-white rounded-xl px-6">Creating a strong and cohesive brand identity is
-                                             essential for standing out in a competitive market. At IkinoDesignCo, I offer comprehensive expertise in branding to give your business a distinctive and
-                                             memorable image.</p>
-                                   </li>
-                                   <li class="mb-6 overflow-hidden">
-                                        <button @click="active == 2 ? active = 0 : active = 2" :class="active == 2 ? 'border-none' : 'border-b'"
-                                             class="w-full flex items-center justify-between text-left text-2xl border-light py-2">
-                                             Print
-                                             <span><img class="w-5" src="assets/img/arrow_down.svg" alt=""></span>
-                                        </button>
-                                        <p :class="active == 2 ? 'max-h-80 py-6':'max-h-0 py-0'" class="bg-light/50 text-white rounded-xl px-6">Print is a crucial aspect of your brand strategy. From
-                                             designing business cards to flyers, posters, and informative brochures, I strive to bring your ideas to life on paper.</p>
-                                   </li>
-                                   <li class="mb-6 overflow-hidden">
-                                        <button @click="active == 3 ? active = 0 : active = 3" :class="active == 3 ? 'border-none' : 'border-b'"
-                                             class="w-full flex items-center justify-between text-left text-2xl border-light py-2">
-                                             Web Design
-                                             <span><img class="w-5" src="assets/img/arrow_down.svg" alt=""></span>
-                                        </button>
-                                        <p :class="active == 3 ? 'max-h-80 py-6':'max-h-0 py-0'" class="bg-light/50 text-white rounded-xl px-6">Your website is often the first point of contact between
-                                             your brand and potential customers. With a user-centered approach, I create intuitive and aesthetically pleasing websites that enhance your brand image,
-                                             promote user engagement, and drive conversions. </p>
-                                   </li>
-                                   <li class="mb-6 overflow-hidden">
-                                        <button @click="active == 4 ? active = 0 : active = 4" :class="active == 4 ? 'border-none' : 'border-b'"
-                                             class="w-full flex items-center justify-between text-left text-2xl border-light py-2">
-                                             Packaging
-                                             <span><img class="w-5" src="assets/img/arrow_down.svg" alt=""></span>
-                                        </button>
-                                        <p :class="active == 4 ? 'max-h-80 py-6':'max-h-0 py-0'" class="bg-light/50 text-white rounded-xl px-6">Attractive packaging is crucial for grabbing consumers'
-                                             attention in a competitive environment. I design innovative and aesthetically pleasing packaging that reflects your brand essence and captivates your
-                                             target audience at first glance. </p>
-                                   </li>
-                                   <li class="mb-6 overflow-hidden">
-                                        <button @click="active == 5 ? active = 0 : active = 5" :class="active == 5 ? 'border-none' : 'border-b'"
-                                             class="w-full flex items-center justify-between text-left text-2xl border-light py-2">
-                                             Social Media
-                                             <span><img class="w-5" src="assets/img/arrow_down.svg" alt=""></span>
-                                        </button>
-                                        <p :class="active == 5 ? 'max-h-80 py-6':'max-h-0 py-0'" class="bg-light/50 text-white rounded-xl px-6">Social media provides a vast platform to promote and
-                                             grow your brand. With my expertise in graphic design and content strategy, I create compelling visuals and engaging content that energize your online
-                                             presence and strengthen your reputation on social platforms. By combining creativity with data analysis, I help you maximize your impact and generate
-                                             meaningful interactions with your audience. </p>
-                                   </li>
-                              </ul>
+                    <div class="md:w-full w-3/5 ml-auto md:pl-0 pl-5">
+                         <h2 class="lg:text-7xl md:text-5xl sm:text-2xl text-lg md:mb-12 sm:mb-8 mb-5">What do we provide</h2>
+                         <div class="flex flex-wrap items-center">
+                              <div class="md:block hidden lg:w-2/5 w-1/2"><img src="assets/img/imageprovide.png" alt=""></div>
+                              <div class="lg:w-3/5 md:w-1/2 w-full lg:pl-10 md:pl-6">
+                                   <ul class="font-light" x-data="{active: 0}">
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 1 ? active = 0 : active = 1" :class="active == 1 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left md:text-2xl text-base border-light sm:py-2 py-1">
+                                                  Branding
+                                                  <span><img class="md:w-5 w-3" src="assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 1 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Creating a strong and
+                                                  cohesive brand identity is
+                                                  essential for standing out in a competitive market. At IkinoDesignCo, I offer comprehensive expertise in branding to give your business a distinctive
+                                                  and
+                                                  memorable image.</p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 2 ? active = 0 : active = 2" :class="active == 2 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left md:text-2xl text-base border-light sm:py-2 py-1">
+                                                  Print
+                                                  <span><img class="md:w-5 w-3" src="assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 2 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Print is a crucial
+                                                  aspect of your brand strategy. From
+                                                  designing business cards to flyers, posters, and informative brochures, I strive to bring your ideas to life on paper.</p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 3 ? active = 0 : active = 3" :class="active == 3 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left md:text-2xl text-base border-light sm:py-2 py-1">
+                                                  Web Design
+                                                  <span><img class="md:w-5 w-3" src="assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 3 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Your website is often
+                                                  the first point of contact between
+                                                  your brand and potential customers. With a user-centered approach, I create intuitive and aesthetically pleasing websites that enhance your brand
+                                                  image,
+                                                  promote user engagement, and drive conversions. </p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 4 ? active = 0 : active = 4" :class="active == 4 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left md:text-2xl text-base border-light sm:py-2 py-1">
+                                                  Packaging
+                                                  <span><img class="md:w-5 w-3" src="assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 4 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Attractive packaging is
+                                                  crucial for grabbing consumers'
+                                                  attention in a competitive environment. I design innovative and aesthetically pleasing packaging that reflects your brand essence and captivates your
+                                                  target audience at first glance. </p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 5 ? active = 0 : active = 5" :class="active == 5 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left md:text-2xl text-base border-light sm:py-2 py-1">
+                                                  Social Media
+                                                  <span><img class="md:w-5 w-3" src="assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 5 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Social media provides a
+                                                  vast platform to promote and
+                                                  grow your brand. With my expertise in graphic design and content strategy, I create compelling visuals and engaging content that energize your online
+                                                  presence and strengthen your reputation on social platforms. By combining creativity with data analysis, I help you maximize your impact and generate
+                                                  meaningful interactions with your audience. </p>
+                                        </li>
+                                   </ul>
+                              </div>
                          </div>
+                    </div>
+                    <div class="absolute md:hidden block left-0 top-0 w-2/5 h-full">
+                         <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
                     </div>
                </div>
           </section>
@@ -249,22 +281,22 @@
 
           <!-- REVIEW -->
           <section class="bg-slate text-dark text-center py-6">
-               <div class="bg-light py-20">
-                    <h2 class="text-7xl mb-12">Client’s love</h2>
+               <div class="bg-light md:py-20 py-12">
+                    <h2 class="lg:text-7xl md:text-5xl sm:text-3xl text-2xl md:mb-12 sm:mb-9 mb-5">Client’s love</h2>
                     <div class="sl-container">
                          <div class="swiper reviewSlider">
                               <div class="swiper-wrapper">
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -276,16 +308,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -297,16 +329,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -318,16 +350,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -339,16 +371,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -360,16 +392,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -381,16 +413,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -402,16 +434,16 @@
                                         </div>
                                    </div>
                                    <div class="swiper-slide">
-                                        <div class="bg-ash rounded-xl pb-4 p-6 flex flex-col justify-between h-80">
+                                        <div class="bg-ash md:rounded-xl rounded-lg pb-4 p-6 flex flex-col justify-between sm:h-80 h-60">
                                              <div>
-                                                  <p class="flex items-center justify-center gap-1 mb-5">
+                                                  <p class="flex items-center justify-center gap-1 sm:mb-5 mb-3">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                        <img src="assets/img/star.svg" alt="star" class="w-4">
                                                   </p>
-                                                  <h3 class="text-2xl font-semibold">Jelly Fondant</h3>
+                                                  <h3 class="md:text-2xl text-lg font-semibold">Jelly Fondant</h3>
                                              </div>
                                              <div>
                                                   <p class="text-sm sl-line-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -438,38 +470,38 @@
           <!-- PROCESS -->
           <section class="bg-light text-dark overflow-hidden">
                <div class="sl-container">
-                    <div class="w-1/2 py-20 pr-12">
-                         <h2 class="text-5xl mb-9">The Process</h2>
+                    <div class="md:w-1/2 w-3/5 md:py-20 py-12 md:pr-12 pr-6">
+                         <h2 class="md:text-5xl sm:text-3xl text-2xl md:mb-9 sm:mb-6 mb-4">The Process</h2>
                          <ul>
-                              <li class="border-b border-dark mb-9">
-                                   <h3 class="text-lg font-medium mb-2">01. Inquire</h3>
+                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                                   <h3 class="md:text-lg text-base font-medium mb-2">01. Inquire</h3>
                                    <p class="font-light text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                         enim ad minim veniam, quis nostrud exercitation</p>
                               </li>
-                              <li class="border-b border-dark mb-9">
-                                   <h3 class="text-lg font-medium mb-2">02. Planning and Contract</h3>
+                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                                   <h3 class="md:text-lg text-base font-medium mb-2">02. Planning and Contract</h3>
                                    <p class="font-light text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                         enim ad minim veniam, quis nostrud exercitation</p>
                               </li>
-                              <li class="border-b border-dark mb-9">
-                                   <h3 class="text-lg font-medium mb-2">03. Design</h3>
+                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                                   <h3 class="md:text-lg text-base font-medium mb-2">03. Design</h3>
                                    <p class="font-light text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                         enim ad minim veniam, quis nostrud exercitation</p>
                               </li>
-                              <li class="border-b border-dark mb-9">
-                                   <h3 class="text-lg font-medium mb-2">04. Delivery</h3>
+                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                                   <h3 class="md:text-lg text-base font-medium mb-2">04. Delivery</h3>
                                    <p class="font-light text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                         enim ad minim veniam, quis nostrud exercitation</p>
                               </li>
-                              <li class="border-b border-dark mb-9">
-                                   <h3 class="text-lg font-medium mb-2">05. Your brand’s ready to success</h3>
+                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                                   <h3 class="md:text-lg text-base font-medium mb-2">05. Your brand’s ready to success</h3>
                                    <p class="font-light text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                         enim ad minim veniam, quis nostrud exercitation</p>
                               </li>
                          </ul>
                          <div class="text-right"><a href="" class="bg-dark text-light py-2 px-6 rounded-md hover:bg-dark/85">Let’s work together</a></div>
                     </div>
-                    <div class="absolute right-0 top-0 w-1/2 h-full">
+                    <div class="absolute right-0 top-0 md:w-1/2 w-2/5 h-full">
                          <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
                     </div>
                </div>
@@ -482,23 +514,23 @@
      <footer class="pt-10">
           <div class="sl-container">
                <div class="flex flex-wrap items-center">
-                    <div>
+                    <div class="sm:w-auto w-full sm:mb-0 mb-4">
                          <a href="" class="w-20 mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
                     </div>
-                    <div class="w-1/2">
+                    <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
                          <ul class="flex flex-wrap">
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Home</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Work with me</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Instagram</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Portfolio</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Blog</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Branding</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">Web Design</a></li>
-                              <li class="w-1/4 py-2"><a href="" class="text-sm hover:opacity-75">About me</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Home</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Work with me</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Instagram</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Portfolio</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Blog</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Branding</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Web Design</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">About me</a></li>
                          </ul>
                     </div>
                </div>
-               <p class="w-full text-right py-4">All rights reserved </p>
+               <p class="w-full sm:text-right text-center py-4">All rights reserved </p>
           </div>
      </footer>
      <!-- FOOTER -->
@@ -515,7 +547,7 @@
                breakpoints: {
                     600: {
                          spaceBetween: 20,
-                         slidesPerView: 5
+                         slidesPerView: 6
                     },
                     1000: {
                          spaceBetween: 50,

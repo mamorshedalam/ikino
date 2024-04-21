@@ -25,7 +25,7 @@
 
 @layer base {
   body {
-    @apply bg-dark text-light;
+    @apply bg-dark text-light sm:text-base text-sm;
   }
 
   section {
