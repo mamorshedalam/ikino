@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sl-container {
+    @apply  2xl:max-w-[1200px] xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full px-3 mx-auto;
+  }
+  .sl-animation {
+    @apply transition-all duration-300 ease-out;
+  }
+  .sl-animation-fade {
+    @apply transition-opacity duration-150 ease-linear;
+  }
+  .sl-marque-text {
+    @apply relative w-full text-nowrap overflow-hidden;
+  }
+  .sl-marque-text ul {
+    @apply flex w-[300%] font-light;
+  }
+  .sl-marque-text li {
+    @apply relative w-1/5 h-10 leading-10 text-center px-5 after:absolute after:h-1 after:w-1 after:top-1/2 after:-translate-y-1/2 after:right-0 after:bg-light after:rounded-full after:z-10;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-light;
+  }
+
+  section {
+    @apply relative;
+  }
+
+  a,
+  button {
+    @apply inline-block cursor-pointer;
+  }
+
+  img {
+    @apply w-full;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply outline-none bg-transparent;
+  }
+
+  a,
+  button,
+  span,
+  p,
+  i,
+  input,
+  select,
+  textarea,
+  li,
+  ul,
+  img,
+  svg,
+  label,
+  svg path,
+  tr,
+  td,
+  *::after,
+  *::before,
+  .transition-3,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply transition-all duration-500 ease-out;
+  }
+}
+
+@layer utilities {
+  .sl-marque-text ul {
+    animation: marquee 50s linear infinite forwards;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-66.6%);
+    }
+  }
+  .sl-line-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
