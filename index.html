@@ -7,7 +7,7 @@
 
      <!-- TITLE & FAVICON -->
      <link rel="icon" href="./assets/img/logo.png" />
-     <title>Ikino</title>
+     <title>Ikino || Home</title>
 
      <!-- FONT AWESOME -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -29,11 +29,11 @@
      <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
-               <li><a href="" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
-               <li><a href="" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
+               <li><a href="index.html" class="font-semibold py-3 px-4 hover:text-light/85">Home</a></li>
                <li><a href="" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
                <li><a href="" class="py-3 px-4 hover:text-light/85">About me</a></li>
-               <li><a href="" class="py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
                <li><a href="" class="py-3 px-4 hover:text-light/85">Blog</a></li>
                <li><a href="" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
           </ul>
@@ -44,11 +44,11 @@
      <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
           <nav class="sl-container">
                <ul class="md:flex hidden items-center justify-between text-sm">
-                    <li><a href="" class="py-2 px-4 hover:text-light/85">Home</a></li>
+                    <li><a href="index.html" class="font-semibold py-2 px-4 hover:text-light/85">Home</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">About me</a></li>
-                    <li><a href=""><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
-                    <li><a href="" class="py-2 px-4 hover:text-light/85">Services</a></li>
+                    <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
+                    <li><a href="service.html" class="py-2 px-4 hover:text-light/85">Services</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Blog</a></li>
                     <li><a href="" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
                </ul>
@@ -515,11 +515,11 @@
           <div class="sl-container">
                <div class="flex flex-wrap items-center">
                     <div class="sm:w-auto w-full sm:mb-0 mb-4">
-                         <a href="" class="w-20 mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
+                         <a href="index.html" class="w-20 mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
                     </div>
                     <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
                          <ul class="flex flex-wrap">
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Home</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="text-sm hover:opacity-75">Home</a></li>
                               <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Work with me</a></li>
                               <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Instagram</a></li>
                               <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Portfolio</a></li>
