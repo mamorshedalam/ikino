@@ -15,8 +15,6 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-     <!-- SWIPER CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
      <!-- ALPINE JS -->
@@ -31,11 +29,11 @@
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
                <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
-               <li><a href="" class="font-semibold py-3 px-4 hover:text-light/85">Portfolio</a></li>
-               <li><a href="" class="py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="portfolio.html" class="font-semibold py-3 px-4 hover:text-light/85">Portfolio</a></li>
+               <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
                <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
-               <li><a href="" class="py-3 px-4 hover:text-light/85">Blog</a></li>
-               <li><a href="" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
+               <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
           </ul>
      </aside>
      <!-- SIDEBAR -->
@@ -45,12 +43,12 @@
           <nav class="sl-container">
                <ul class="md:flex hidden items-center justify-between text-sm">
                     <li><a href="index.html" class="py-2 px-4 hover:text-light/85">Home</a></li>
-                    <li><a href="" class="font-semibold py-2 px-4 hover:text-light/85">Portfolio</a></li>
-                    <li><a href="" class="py-2 px-4 hover:text-light/85">About me</a></li>
+                    <li><a href="portfolio.html" class="font-semibold py-2 px-4 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="py-2 px-4 hover:text-light/85">About me</a></li>
                     <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
                     <li><a href="service.html" class="py-2 px-4 hover:text-light/85">Services</a></li>
-                    <li><a href="" class="py-2 px-4 hover:text-light/85">Blog</a></li>
-                    <li><a href="" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
+                    <li><a href="blog.html" class="py-2 px-4 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
                </ul>
                <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
@@ -130,13 +128,13 @@
                     <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
                          <ul class="flex flex-wrap">
                               <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="text-sm hover:opacity-75">Home</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Work with me</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="text-sm hover:opacity-75">Work with me</a></li>
                               <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Instagram</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Portfolio</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Blog</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Branding</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Web Design</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">About me</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="text-sm hover:opacity-75">Portfolio</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="text-sm hover:opacity-75">Blog</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="text-sm hover:opacity-75">Branding</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="text-sm hover:opacity-75">Web Design</a></li>
+                              <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="text-sm hover:opacity-75">About me</a></li>
                          </ul>
                     </div>
                </div>
@@ -144,52 +142,6 @@
           </div>
      </footer>
      <!-- FOOTER -->
-
-     <!-- SCRIPT LINKS -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-     <script>
-          var swiper = new Swiper(".indexSlider", {
-               slidesPerView: 4,
-               spaceBetween: 10,
-               autoplay: true,
-               autoplaySpeed: 500,
-               loop: true,
-               breakpoints: {
-                    600: {
-                         spaceBetween: 20,
-                         slidesPerView: 6
-                    },
-                    1000: {
-                         spaceBetween: 50,
-                         slidesPerView: 7
-                    },
-               },
-          });
-          var swiper = new Swiper(".reviewSlider", {
-               slidesPerView: 1,
-               autoplay: true,
-               autoplaySpeed: 1500,
-               loop: true,
-               navigation: {
-                    nextEl: ".reviewSlider-next",
-                    prevEl: ".reviewSlider-prev",
-               },
-               breakpoints: {
-                    600: {
-                         spaceBetween: 15,
-                         slidesPerView: 2
-                    },
-                    1000: {
-                         spaceBetween: 25,
-                         slidesPerView: 3
-                    },
-                    1300: {
-                         spaceBetween: 50,
-                         slidesPerView: 4
-                    },
-               },
-          });
-     </script>
 </body>
 
 </html>
