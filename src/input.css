@@ -21,11 +21,20 @@
   .sl-marque-text li {
     @apply relative w-1/5 h-10 leading-10 text-center px-5 after:absolute after:h-1 after:w-1 after:top-1/2 after:-translate-y-1/2 after:right-0 after:bg-light after:rounded-full after:z-10;
   }
+  .sl-marque-slide{
+    @apply relative w-full overflow-hidden;
+  }
+  .sl-marque-slide ul{
+    @apply flex w-[300%];
+  }
+  .sl-marque-slide li{
+    @apply relative w-1/5 sm:px-6 px-3;
+  }
 }
 
 @layer base {
   body {
-    @apply bg-dark text-light sm:text-base text-sm;
+    @apply bg-dark text-light md:text-base sm:text-sm text-[9px];
   }
 
   section {
@@ -44,7 +53,7 @@
   input,
   select,
   textarea {
-    @apply outline-none bg-transparent;
+    @apply !outline-none bg-transparent;
   }
 
   a,
@@ -86,6 +95,18 @@
     }
     100% {
       transform: translateX(-66.6%);
+    }
+  }
+  .sl-marque-slide ul {
+    animation: slide 50s linear infinite forwards;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(-66.6%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
   .sl-line-text {

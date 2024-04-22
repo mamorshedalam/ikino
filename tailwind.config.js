@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["Inter", "ui-sans-serif", "system-ui"],
+      sans: ["Montserrat", "ui-sans-serif", "system-ui"],
       serif: ["ui-serif", "Georgia"],
       mono: ["ui-monospace", "SFMono-Regular"],
     },
@@ -28,7 +28,7 @@ module.exports = {
       'gray': '#EEEBE9',
       'neutral': '#363636',
       'yellow': '#8A792B',
-      
+      'green': '#746c42',
     },
   },
   plugins: [],

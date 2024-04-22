@@ -19,6 +19,40 @@
      <link href="./assets/css/output.css" rel="stylesheet">
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <style>
+          input[type="radio"], 
+          input[type="checkbox"]{
+               appearance: none;
+               position: relative;
+               background-color: #F0EAE1;
+               margin: 0;
+               font: inherit;
+               color: currentColor;
+               width: 15px;
+               height: 15px;
+               border: 1px solid #2E2E2C;
+               border-radius: 25%;
+               transform: translateY(-0.075em);
+          }
+
+          input[type="radio"]::before,
+          input[type="checkbox"]::before {
+               position: absolute;
+               content: "";
+               display: block;
+               width: 100%;
+               height: 100%;
+               border-radius: 25%;
+               transform: scale(0);
+               transition: 120ms transform ease-in-out;
+               background-color: #746c42;
+          }
+
+          input[type="radio"]:checked::before,
+          input[type="checkbox"]:checked::before {
+               transform: scale(1);
+          }
+     </style>
 </head>
 
 <body x-data="{sidebar: false}">
@@ -59,11 +93,11 @@
      <!-- MAIN -->
      <main class="mt-16 text-dark bg-light">
           <!-- HERO -->
-          <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-60 md:py-40 py-20 before:absolute before:inset-0 before:bg-dark/85"
+          <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-72 md:py-40 py-20 before:absolute before:inset-0 before:bg-dark/85"
                style="background-image: url(assets/img/hero-3.png);">
                <div class="relative sl-container text-center z-10">
-                    <h2 class="lg:text-5xl sm:text-3xl text-2xl font-bold md:mb-6 mb-4">LETS GET TO KNOW EACH OTHER</h2>
-                    <p class="lg:text-xl md:text-lg text-base font-light">Ready to launch your project? Contact us, and we will respond within 24 hours.</p>
+                    <h2 class="lg:text-5xl md:text-3xl sm:text-2xl text-xl font-bold md:mb-6 mb-4">LETS GET TO KNOW EACH OTHER</h2>
+                    <p class="lg:text-xl md:text-lg sm:text-base text-sm font-light">Ready to launch your project? Contact us, and we will respond within 24 hours.</p>
                </div>
           </section>
           <!-- HERO -->
@@ -126,83 +160,89 @@
                     <div class="flex flex-wrap font-light">
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="firstName">Fast Name</label>
-                              <input id="firstName" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="firstName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="lastName">Last Name</label>
-                              <input id="lastName" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="lastName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="email">Email</label>
-                              <input id="email" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="email" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="brand">Company / Brand Name</label>
-                              <input id="brand" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="brand" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="location">Location</label>
-                              <input id="location" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="location" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="phone">Phone</label>
-                              <input id="phone" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="phone" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <p class="mb-2">Are you an online or offline store</p>
-                              <input type="radio" name="store" id="online" value="online" class="w-4 h-4 mr-2">
-                              <label for="online">Online</label>
-                              <input type="radio" name="store" id="offline" value="offline" class="w-4 h-4 ml-12 mr-2">
-                              <label for="offline">Offline</label>
+                              <div class="flex items-center gap-2">
+                                   <input type="radio" name="store" id="online" value="online" class="">
+                                   <label class="mb-1 mr-6" for="online">Online</label>
+                                   <input type="radio" name="store" id="offline" value="offline" class="">
+                                   <label class="mb-1" for="offline">Offline</label>
+                              </div>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <p class="mb-2">Does your brand have social media ?</p>
-                              <input type="radio" name="media" id="yes" value="yes" class="w-4 h-4 mr-2">
-                              <label for="yes">Yes</label>
-                              <input type="radio" name="media" id="no" value="no" class="w-4 h-4 ml-12 mr-2">
-                              <label for="no">No</label>
+                              <div class="flex items-center gap-2">
+                                   <input type="radio" name="media" id="yes" value="yes" class="">
+                                   <label class="mb-1 mr-6" for="yes">Yes</label>
+                                   <input type="radio" name="media" id="no" value="no" class="w-4 h-4 ml-12 mr-2">
+                                   <label class="mb-1" for="no">No</label>
+                              </div>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="message">Tell me more about your business ? <span class="text-sm">(what do your offer ? What do you sell ? What is your main objective)</span></label>
-                              <textarea id="message" class="w-full rounded-md py-1 px-3 md:h-40 h-28 border-2 border-dark mt-2"></textarea>
+                              <textarea id="message" class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..."></textarea>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="target">What’s your target audience ?</label>
-                              <input id="target" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="target" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="message">How would you describe your brand’s style ? <span class="text-sm"></span>(minimalist, colorful, neutral, old school...)</span></label>
-                              <input id="target" type="text" class="w-full rounded-md py-1 px-3 border-2 border-dark mt-2">
+                              <input id="target" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <p class="mb-2">What services do you need ?</p>
-                              <div class="mb-2">
-                                   <input type="checkbox" name="service" id="branding" class="w-4 h-4 mr-2">
-                                   <label for="branding">Branding</label>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" name="service" id="branding">
+                                   <label class="mb-1" for="branding">Branding</label>
                               </div>
-                              <div class="mb-2">
-                                   <input type="checkbox" name="service" id="print" class="w-4 h-4 mr-2">
-                                   <label for="print">Print</label>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" name="service" id="print">
+                                   <label class="mb-1" for="print">Print</label>
                               </div>
-                              <div class="mb-2">
-                                   <input type="checkbox" name="service" id="packing" class="w-4 h-4 mr-2">
-                                   <label for="packing">Packaging</label>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" name="service" id="packing">
+                                   <label class="mb-1" for="packing">Packaging</label>
                               </div>
-                              <div class="mb-2">
-                                   <input type="checkbox" name="service" id="social" class="w-4 h-4 mr-2">
-                                   <label for="social">Social Media</label>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" name="service" id="social">
+                                   <label class="mb-1" for="social">Social Media</label>
                               </div>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="question">Do you have any questions for me ?</label>
-                              <textarea id="question" class="w-full rounded-md py-1 px-3 md:h-40 h-28 border-2 border-dark mt-2"></textarea>
+                              <textarea id="question" class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..."></textarea>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <p class="text-xs italic opacity-75">N.B : I prioritize ethical partnerships, selectively engaging with clients and declining those who promote alcohol, violence, or
                                    values misaligned with ours. Thank you for your understanding.</p>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
-                              <a href="" class="bg-slate text-light py-2 px-6 rounded-md hover:bg-slate/85">Send</a>
+                              <a href="" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">Send</a>
                          </div>
                     </div>
                </div>
