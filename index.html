@@ -26,7 +26,7 @@
 <body x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
@@ -41,16 +41,16 @@
      <!-- SIDEBAR -->
 
      <!-- HEADER -->
-     <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
-          <nav class="sl-container">
-               <ul class="md:flex hidden items-center justify-between text-sm">
-                    <li><a href="index.html" class="font-semibold py-2 px-4 hover:text-light/85">Home</a></li>
-                    <li><a href="portfolio.html" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
-                    <li><a href="about.html" class="py-2 px-4 hover:text-light/85">About me</a></li>
-                    <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
-                    <li><a href="service.html" class="py-2 px-4 hover:text-light/85">Services</a></li>
-                    <li><a href="blog.html" class="py-2 px-4 hover:text-light/85">Blog</a></li>
-                    <li><a href="contact.html" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="font-semibold mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src="assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
                <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
@@ -59,12 +59,12 @@
      <!-- HEADER -->
 
      <!-- MAIN -->
-     <main class="mt-16">
+     <main class="mt-14">
           <!-- HERO -->
           <section class="bg-cover bg-center bg-no-repeat lg:pt-60 md:pt-28 md:pb-52 py-12" style="background-image: url(assets/img/hero.png);">
                <div class="sl-container text-center">
                     <h1 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl leading-relaxed lg:mb-20 md:mb-16 sm:mb-8 mb-5">Let’s Create Inspiring Designs With Lasting Impression</h1>
-                    <a href="" class="bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark">Let’s work together</a>
+                    <a href="contact.html" class="bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark">Let’s work together</a>
                </div>
           </section>
           <!-- HERO -->
@@ -172,7 +172,7 @@
                                    d'interfaces web intuitives et de designs graphiques percutants. Son engagement envers l'excellence artistique transparaît à travers une série de projets réussis,
                                    démontrant sa capacité à traduire les besoins spécifiques des clients en créations visuelles remarquables. Explorez ce portfolio pour découvrir l'expertise unique
                                    d'Ikino, où chaque projet devient une fusion de créativité et de fonctionnalité, captivant le regard et offrant une expérience visuelle mémorable.</p>
-                              <a href="" class="bg-slate text-light border-2 border-slate py-2 px-6 rounded-md hover:bg-light hover:text-slate">More about me</a>
+                              <a href="about.html" class="bg-slate text-light border-2 border-slate py-2 px-6 rounded-md hover:bg-light hover:text-slate">More about me</a>
                          </div>
                          <div class="md:block hidden lg:w-2/5 md:w-1/2 w-full md:pl-3"><img src="assets/img/imageaboutme.png" alt=""></div>
                     </div>
@@ -227,7 +227,7 @@
           <!-- SERVICE -->
           <section class="bg-neutral lg:pt-40 md:py-20 py-12">
                <div class="sl-container">
-                    <div class="md:w-full w-3/5 ml-auto md:pl-0 pl-5">
+                    <div class="md:w-full w-3/5 ml-auto md:pl-0 xs:pl-5 pl-2">
                          <h2 class="font-light lg:text-7xl md:text-4xl sm:text-xl text-lg md:mb-12 sm:mb-8 mb-5">What do we provide</h2>
                          <div class="flex flex-wrap items-center">
                               <div class="md:block hidden lg:w-2/5 w-1/2"><img src="assets/img/imageprovide.png" alt=""></div>
@@ -331,41 +331,40 @@
 
           <!-- PROCESS -->
           <section class="bg-light text-dark overflow-hidden">
-               <div class="sl-container">
-                    <div class="md:w-1/2 w-4/5 md:py-20 py-12 md:pr-12 pr-6">
-                         <h2 class="lg:text-5xl sm:text-2xl text-xl md:mb-9 sm:mb-6 mb-4">The Process</h2>
-                         <ul>
-                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
-                                   <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">01. Inquire</h3>
-                                   <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam, quis nostrud exercitation</p>
-                              </li>
-                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
-                                   <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">02. Planning and Contract</h3>
-                                   <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam, quis nostrud exercitation</p>
-                              </li>
-                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
-                                   <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">03. Design</h3>
-                                   <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam, quis nostrud exercitation</p>
-                              </li>
-                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
-                                   <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">04. Delivery</h3>
-                                   <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam, quis nostrud exercitation</p>
-                              </li>
-                              <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
-                                   <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">05. Your brand’s ready to success</h3>
-                                   <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam, quis nostrud exercitation</p>
-                              </li>
-                         </ul>
-                         <div class="text-right"><a href="" class="bg-dark text-light border-2 border-dark py-1 md:text-sm px-4 rounded-md hover:bg-light hover:text-dark">Let’s work together</a></div>
-                    </div>
-                    <div class="absolute right-0 top-0 md:w-1/2 w-1/5 h-full">
-                         <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
-                    </div>
+               <div class="md:w-1/2 w-4/5 md:py-20 py-12 md:pr-12 pr-6 sm:pl-6 pl-3">
+                    <h2 class="lg:text-5xl sm:text-2xl text-xl md:mb-9 sm:mb-6 mb-4">The Process</h2>
+                    <ul>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">01. Inquire</h3>
+                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">02. Planning and Contract</h3>
+                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">03. Design</h3>
+                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">04. Delivery</h3>
+                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">05. Your brand’s ready to success</h3>
+                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation</p>
+                         </li>
+                    </ul>
+                    <div class="text-right"><a href="contact.html" class="bg-dark text-light border-2 border-dark py-1 md:text-sm px-4 rounded-md hover:bg-light hover:text-dark">Let’s work
+                              together</a></div>
+               </div>
+               <div class="absolute right-0 top-0 md:w-1/2 w-1/5 h-full">
+                    <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
                </div>
           </section>
           <!-- PROCESS -->

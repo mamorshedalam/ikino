@@ -24,31 +24,31 @@
 <body x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
-               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="index.html" class="font-semibold py-3 px-4 hover:text-light/85">Home</a></li>
                <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
                <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
                <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
-               <li><a href="blog.html" class="font-semibold py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
                <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
           </ul>
      </aside>
      <!-- SIDEBAR -->
 
      <!-- HEADER -->
-     <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
-          <nav class="sl-container">
-               <ul class="md:flex hidden items-center justify-between text-sm">
-                    <li><a href="index.html" class="py-2 px-4 hover:text-light/85">Home</a></li>
-                    <li><a href="portfolio.html" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
-                    <li><a href="about.html" class="py-2 px-4 hover:text-light/85">About me</a></li>
-                    <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
-                    <li><a href="service.html" class="py-2 px-4 hover:text-light/85">Services</a></li>
-                    <li><a href="blog.html" class="font-semibold py-2 px-4 hover:text-light/85">Blog</a></li>
-                    <li><a href="contact.html" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="font-semibold mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src="assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
                <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
@@ -123,8 +123,8 @@
                          <p class="lg:text-xl md:text-lg sm:text-base text-sm font-light">Insights for Success and Growth</p>
                     </div>
                     <div class="flex flex-wrap justify-center">
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 68.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -139,8 +139,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 71.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -155,8 +155,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 75.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -171,8 +171,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 68.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -187,8 +187,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 71.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -203,8 +203,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 75.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">

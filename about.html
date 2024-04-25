@@ -24,13 +24,13 @@
 <body x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
-               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="index.html" class="font-semibold py-3 px-4 hover:text-light/85">Home</a></li>
                <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
-               <li><a href="about.html" class="font-semibold py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
                <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
                <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
                <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
@@ -39,16 +39,16 @@
      <!-- SIDEBAR -->
 
      <!-- HEADER -->
-     <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
-          <nav class="sl-container">
-               <ul class="md:flex hidden items-center justify-between text-sm">
-                    <li><a href="index.html" class="py-2 px-4 hover:text-light/85">Home</a></li>
-                    <li><a href="portfolio.html" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
-                    <li><a href="about.html" class="font-semibold py-2 px-4 hover:text-light/85">About me</a></li>
-                    <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
-                    <li><a href="service.html" class="py-2 px-4 hover:text-light/85">Services</a></li>
-                    <li><a href="blog.html" class="py-2 px-4 hover:text-light/85">Blog</a></li>
-                    <li><a href="contact.html" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="font-semibold mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src="assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
                <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
@@ -74,7 +74,7 @@
                                    d'interfaces web intuitives et de designs graphiques percutants. Son engagement envers l'excellence artistique transparaît à travers une série de projets réussis,
                                    démontrant sa capacité à traduire les besoins spécifiques des clients en créations visuelles remarquables. Explorez ce portfolio pour découvrir l'expertise unique
                                    d'Ikino, où chaque projet devient une fusion de créativité et de fonctionnalité, captivant le regard et offrant une expérience visuelle mémorable.</p>
-                              <a href="" class="bg-slate text-light md:text-xs py-2 px-6 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Lets talk </a>
+                              <a href="contact.html" class="bg-slate text-light md:text-xs py-2 px-6 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Lets talk </a>
                          </div>
                     </div>
                </div>
@@ -82,17 +82,17 @@
           <!-- ABOUT -->
 
           <!-- BANNER -->
-          <section class="bg-dark text-light text-center lg:text-2xl md:text-xl text-base md:py-12 py-9">
+          <section class="bg-dark text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
                <h2 class="lg:w-3/5 mx-auto">“ If you're not failing every now and again, it's a sign you're not doing anything very innovative. “</h2>
           </section>
           <!-- BANNER -->
 
           <!-- BLOG -->
-          <section class="py-20">
+          <section class="md:py-20 py-10">
                <div class="sl-container">
                     <div class="flex flex-wrap justify-center">
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 68.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -106,8 +106,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 71.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -121,8 +121,8 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 md:px-6 mb-9">
-                              <div class="rounded-3xl border-4 border-dark">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
                                    <img src="assets/img/Rectangle 75.jpg" alt="blog" class="rounded-t-3xl h-40">
                                    <div class="md:p-6 p-4 md:pt-4 pt-2">
                                         <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
@@ -137,7 +137,7 @@
                               </div>
                          </div>
                     </div>
-                    <div class="text-center mt-10"><a href="blog.html" class="underline">Go to the blog</a></div>
+                    <div class="text-center md:mt-10 sm:mt-6 mt-2"><a href="blog.html" class="underline">Go to the blog</a></div>
                </div>
           </section>
           <!-- BLOG -->

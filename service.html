@@ -24,14 +24,14 @@
 <body x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
-               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="index.html" class="font-semibold py-3 px-4 hover:text-light/85">Home</a></li>
                <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
                <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
-               <li><a href="service.html" class="font-semibold py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
                <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
                <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
           </ul>
@@ -39,16 +39,16 @@
      <!-- SIDEBAR -->
 
      <!-- HEADER -->
-     <header class="fixed top-0 left-0 w-full py-2 bg-dark z-50">
-          <nav class="sl-container">
-               <ul class="md:flex hidden items-center justify-between text-sm">
-                    <li><a href="index.html" class="py-2 px-4 hover:text-light/85">Home</a></li>
-                    <li><a href="portfolio.html" class="py-2 px-4 hover:text-light/85">Portfolio</a></li>
-                    <li><a href="about.html" class="py-2 px-4 hover:text-light/85">About me</a></li>
-                    <li><a href="index.html"><img src="assets/img/logo.png" alt="logo" class="h-12"></a></li>
-                    <li><a href="service.html" class="font-semibold py-2 px-4 hover:text-light/85">Services</a></li>
-                    <li><a href="blog.html" class="py-2 px-4 hover:text-light/85">Blog</a></li>
-                    <li><a href="contact.html" class="py-2 px-4 hover:text-light/85">Work with me</a></li>
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="font-semibold mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src="assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
                <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
@@ -69,10 +69,10 @@
           <!-- HERO -->
 
           <!-- BANDING -->
-          <section class="md:py-20 py-12">
+          <section class="md:py-20 sm:py-12 py-9">
                <div class="sl-container">
                     <div class="flex flex-wrap">
-                         <div class="lg:w-2/5 md:w-3/5 w-4/5 text-sm lg:pr-20">
+                         <div class="lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pr-20">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">Branding</h2>
                               <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
                                    inventore
@@ -86,7 +86,7 @@
                                    inventore
                                    veritatis et
                                    quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <div class="text-right"><a href="" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
+                              <div class="text-right"><a href="contact.html" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                          <div class="lg:w-3/5 lg:block hidden">
                               <img src="assets/img/Rectangle 124.jpg" alt="img">
@@ -100,19 +100,19 @@
           <!-- BANDING -->
 
           <!-- BANNER -->
-          <section class="bg-stone text-light text-center lg:text-4xl md:text-2xl text-lg md:py-12 py-9">
+          <section class="bg-stone text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
                <h2>“A Glimpse into My Projects”</h2>
           </section>
           <!-- BANNER -->
 
           <!-- BANDING -->
-          <section class="md:py-20 py-12">
+          <section class="md:py-20 sm:py-12 py-9">
                <div class="sl-container">
                     <div class="flex flex-wrap justify-end">
                          <div class="lg:w-3/5 lg:block hidden">
                               <img src="assets/img/Rectangle 125.jpg" alt="img">
                          </div>
-                         <div class="lg:w-2/5 md:w-3/5 w-4/5 text-sm lg:pl-20 text-right">
+                         <div class="lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pl-20 text-right">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">Print</h2>
                               <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
@@ -120,7 +120,7 @@
                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
                               <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <div class="text-left"><a href="" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
+                              <div class="text-left"><a href="contact.html" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                     </div>
                     <div class="absolute left-0 top-0 lg:hidden block md:w-2/5 w-1/5 h-full">
@@ -131,16 +131,16 @@
           <!-- BANDING -->
 
           <!-- BANNER -->
-          <section class="bg-slate text-light text-center lg:text-4xl md:text-2xl text-lg md:py-12 py-9">
+          <section class="bg-slate text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
                <h2>“A Glimpse into My Projects”</h2>
           </section>
           <!-- BANNER -->
 
           <!-- BANDING -->
-          <section class="md:py-20 py-12">
+          <section class="md:py-20 sm:py-12 py-9">
                <div class="sl-container">
                     <div class="flex flex-wrap">
-                         <div class="lg:w-2/5 md:w-3/5 w-4/5 text-sm lg:pr-20">
+                         <div class="lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pr-20">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">Webdesign</h2>
                               <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
                                    inventore
@@ -154,7 +154,7 @@
                                    inventore
                                    veritatis et
                                    quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <div class="text-right"><a href="" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
+                              <div class="text-right"><a href="contact.html" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                          <div class="lg:w-3/5 lg:block hidden">
                               <img src="assets/img/Rectangle 124.jpg" alt="img">
@@ -168,19 +168,19 @@
           <!-- BANDING -->
 
           <!-- BANNER -->
-          <section class="bg-stone text-light text-center lg:text-4xl md:text-2xl text-lg md:py-12 py-9">
+          <section class="bg-stone text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
                <h2>“A Glimpse into My Projects”</h2>
           </section>
           <!-- BANNER -->
 
           <!-- BANDING -->
-          <section class="md:py-20 py-12">
+          <section class="md:py-20 sm:py-12 py-9">
                <div class="sl-container">
                     <div class="flex flex-wrap justify-end">
                          <div class="lg:w-3/5 lg:block hidden">
                               <img src="assets/img/Rectangle 125.jpg" alt="img">
                          </div>
-                         <div class="lg:w-2/5 md:w-3/5 w-4/5 text-sm lg:pl-20 text-right">
+                         <div class="lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pl-20 text-right">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">SOCIAL MEDIA</h2>
                               <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
@@ -188,7 +188,7 @@
                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
                               <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <div class="text-left"><a href="" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
+                              <div class="text-left"><a href="contact.html" class="text-light bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                     </div>
                     <div class="absolute left-0 top-0 lg:hidden block md:w-2/5 w-1/5 h-full">
