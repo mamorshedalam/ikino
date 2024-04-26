@@ -28,9 +28,9 @@
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
-               <li><a href="index.html" class="font-semibold py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
                <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
-               <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="about.html" class="font-semibold py-3 px-4 hover:text-light/85">About me</a></li>
                <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
                <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
                <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
@@ -42,16 +42,29 @@
      <header class="fixed top-0 left-0 w-full bg-dark z-50">
           <nav>
                <ul class="md:flex hidden items-center justify-center text-sm">
-                    <li><a href="index.html" class="font-semibold mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="index.html" class="mr-10 hover:text-light/85">Home</a></li>
                     <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
-                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="about.html" class="font-semibold mr-10 hover:text-light/85">About me</a></li>
                     <li><a href="index.html"><img src="assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
                     <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
                     <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
                     <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
+               <div x-data="{active: false, show: 'French'}">
+                    <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
+                         <span x-text="show"></span>
+                         <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                              <path
+                                   d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                         </svg>
+                    </button>
+                    <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
+                         <li @click="show = 'English'; active = !active" class="py-1.5 px-5 cursor-pointer">English</li>
+                         <li @click="show = 'French'; active = !active" class="py-1.5 px-5 cursor-pointer">French</li>
+                    </ul>
+               </div>
                <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
-               <button @click="sidebar = !sidebar" class="absolute right-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
+               <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
      <!-- HEADER -->
@@ -82,7 +95,7 @@
           <!-- ABOUT -->
 
           <!-- BANNER -->
-          <section class="bg-dark text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
+          <section class="bg-dark text-light text-center lg:text-xl md:text-lg sm:text-sm md:py-12 sm:py-7 xs:py-5 py-3">
                <h2 class="lg:w-3/5 mx-auto">“ If you're not failing every now and again, it's a sign you're not doing anything very innovative. “</h2>
           </section>
           <!-- BANNER -->
@@ -145,27 +158,25 @@
      <!-- MAIN -->
 
      <!-- FOOTER -->
-     <footer class="pt-10">
-          <div class="sl-container">
-               <div class="flex flex-wrap items-center">
-                    <div class="sm:w-auto w-full sm:mb-0 mb-4">
-                         <a href="" class="w-20 mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
-                    </div>
-                    <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
-                         <ul class="flex flex-wrap">
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="text-sm hover:opacity-75">Home</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="text-sm hover:opacity-75">Work with me</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="text-sm hover:opacity-75">Instagram</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="text-sm hover:opacity-75">Portfolio</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="text-sm hover:opacity-75">Blog</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="text-sm hover:opacity-75">Branding</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="text-sm hover:opacity-75">Web Design</a></li>
-                              <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="text-sm hover:opacity-75">About me</a></li>
-                         </ul>
-                    </div>
+     <footer class="pt-5 md:text-left text-center">
+          <div class="flex flex-wrap items-center max-w-screen-xl">
+               <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
+                    <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
                </div>
-               <p class="w-full sm:text-right text-center py-4">All rights reserved </p>
+               <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
+                    <ul class="flex flex-wrap">
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="md:text-xs hover:opacity-75">Home</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="md:text-xs hover:opacity-75">Work with me</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="md:text-xs hover:opacity-75">Instagram</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="md:text-xs hover:opacity-75">Portfolio</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="md:text-xs hover:opacity-75">Blog</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Branding</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Web Design</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="md:text-xs hover:opacity-75">About me</a></li>
+                    </ul>
+               </div>
           </div>
+          <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
      </footer>
      <!-- FOOTER -->
 </body>
