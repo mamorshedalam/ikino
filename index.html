@@ -19,6 +19,8 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="assets/vendor/wowJS/animate.css">
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -74,7 +76,7 @@
      <!-- MAIN -->
      <main class="mt-14">
           <!-- HERO -->
-          <section class="bg-cover bg-center bg-no-repeat lg:pt-72 md:pt-32 md:pb-60 py-12" style="background-image: url(assets/img/hero.png);">
+          <section class="wow fadeIn bg-cover bg-center bg-no-repeat lg:pt-72 md:pt-32 md:pb-60 py-12" style="background-image: url(assets/img/hero.png);">
                <div class="sl-container text-center">
                     <h1 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl leading-relaxed lg:mb-20 md:mb-16 sm:mb-8 mb-5">Let’s Create Inspiring Designs With Lasting Impression</h1>
                     <a href="contact.html" class="bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark">Let’s work together</a>
@@ -174,7 +176,7 @@
           <section class="text-dark bg-gray md:py-20 py-12">
                <div class="sl-container">
                     <div class="flex flex-wrap items-center">
-                         <div class="lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
+                         <div class="wow fadeInLeft lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
                               <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-6 mb-4">Ikino Design Co</h2>
                               <p class="lg:w-4/5 font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Bienvenue sur le portfolio d'Ikino, une talentueuse web et graphic designer diplômée avec
                                    distinction. Forte
@@ -187,7 +189,7 @@
                                    d'Ikino, où chaque projet devient une fusion de créativité et de fonctionnalité, captivant le regard et offrant une expérience visuelle mémorable.</p>
                               <a href="about.html" class="bg-slate text-light border-2 border-slate py-2 px-6 rounded-md hover:bg-light hover:text-slate">More about me</a>
                          </div>
-                         <div class="md:block hidden lg:w-2/5 md:w-1/2 w-full md:pl-3"><img src="assets/img/imageaboutme.png" alt=""></div>
+                         <div class="wow fadeInRight md:block hidden lg:w-2/5 md:w-1/2 w-full md:pl-3"><img src="assets/img/imageaboutme.png" alt=""></div>
                     </div>
                </div>
           </section>
@@ -241,10 +243,10 @@
           <section class="bg-neutral lg:pt-40 md:py-20 py-12">
                <div class="sl-container">
                     <div class="md:w-full w-3/5 ml-auto md:pl-0 xs:pl-5 pl-2">
-                         <h2 class="font-light lg:text-7xl md:text-4xl sm:text-xl text-lg md:mb-12 sm:mb-8 mb-5">What do we provide</h2>
+                         <h2 class="wow fadeInDown font-light lg:text-7xl md:text-4xl sm:text-xl text-lg md:mb-12 sm:mb-8 mb-5">What do we provide</h2>
                          <div class="flex flex-wrap items-center">
-                              <div class="md:block hidden lg:w-2/5 w-1/2"><img src="assets/img/imageprovide.png" alt=""></div>
-                              <div class="lg:w-3/5 md:w-1/2 w-full lg:pl-10 md:pl-6">
+                              <div class="wow fadeInLeft md:block hidden lg:w-2/5 w-1/2"><img src="assets/img/imageprovide.png" alt=""></div>
+                              <div class="wow fadeInRight lg:w-3/5 md:w-1/2 w-full lg:pl-10 md:pl-6">
                                    <ul class="font-light" x-data="{active: 0}">
                                         <li class="md:mb-6 mb-2.5 overflow-hidden">
                                              <button @click="active == 1 ? active = 0 : active = 1" :class="active == 1 ? 'border-none' : 'border-b'"
@@ -312,7 +314,7 @@
                               </div>
                          </div>
                     </div>
-                    <div class="absolute md:hidden block left-0 top-0 w-2/5 h-full">
+                    <div class="wow fadeInLeft absolute md:hidden block left-0 top-0 w-2/5 h-full">
                          <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
                     </div>
                </div>
@@ -322,9 +324,9 @@
           <!-- REVIEW -->
           <section class="bg-slate text-dark text-center py-6">
                <div class="bg-light md:py-20 py-12">
-                    <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-12 sm:mb-9 mb-5">Client’s love</h2>
+                    <h2 class="wow fadeInDown lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-12 sm:mb-9 mb-5">Client’s love</h2>
                     <div class="sl-container">
-                         <div class="swiper reviewSlider">
+                         <div class="wow fadeInUp swiper reviewSlider">
                               <div class="swiper-wrapper">
                                    <div class="swiper-slide"><img class="max-w-xs mx-auto" src="assets/img/Avis soumia@10x.png" alt="review"></div>
                                    <div class="swiper-slide"><img class="max-w-xs mx-auto" src="assets/img/Nawal avis fr@10x.png" alt="review"></div>
@@ -349,7 +351,7 @@
 
           <!-- PROCESS -->
           <section class="bg-light text-dark overflow-hidden">
-               <div class="md:w-1/2 w-4/5 md:py-20 py-12 md:pr-12 pr-6 sm:pl-6 pl-3">
+               <div class="wow fadeInLeft md:w-1/2 w-4/5 md:py-20 py-12 md:pr-12 pr-6 sm:pl-6 pl-3">
                     <h2 class="lg:text-5xl sm:text-2xl text-xl md:mb-9 sm:mb-6 mb-4">The Process</h2>
                     <ul>
                          <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
@@ -381,7 +383,7 @@
                     <div class="text-right"><a href="contact.html" class="bg-dark text-light border-2 border-dark py-1 md:text-sm px-4 rounded-md hover:bg-light hover:text-dark">Let’s work
                               together</a></div>
                </div>
-               <div class="absolute right-0 top-0 md:w-1/2 w-1/5 h-full">
+               <div class="wow fadeInRight absolute right-0 top-0 md:w-1/2 w-1/5 h-full">
                     <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
                </div>
           </section>
@@ -390,7 +392,7 @@
      <!-- MAIN -->
 
      <!-- FOOTER -->
-     <footer class="pt-5 md:text-left text-center">
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
           <div class="flex flex-wrap items-center max-w-screen-xl">
                <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
                     <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
@@ -414,7 +416,14 @@
 
      <!-- SCRIPT LINKS -->
      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+     <!-- ANIMATION -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/wowJS/wow.min.js"></script>
      <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+
+          // SWIPER
           var swiper = new Swiper(".reviewSlider", {
                slidesPerView: 1,
                autoplay: true,

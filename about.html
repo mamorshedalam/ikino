@@ -17,6 +17,8 @@
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="assets/vendor/wowJS/animate.css">
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -75,8 +77,8 @@
           <section class="text-dark bg-gray md:py-20 py-12">
                <div class="sl-container">
                     <div class="flex flex-wrap items-center">
-                         <div class="md:block hidden lg:w-2/5 md:w-1/2 w-full md:pr-10"><img src="assets/img/imageaboutme.png" alt=""></div>
-                         <div class="lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
+                         <div class="wow fadeInLeft md:block hidden lg:w-2/5 md:w-1/2 w-full md:pr-10"><img src="assets/img/imageaboutme.png" alt=""></div>
+                         <div class="wow fadeInRight lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
                               <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-6 mb-4">Ikino Design Co</h2>
                               <p class="font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Bienvenue sur le portfolio d'Ikino, une talentueuse web et graphic designer diplômée avec
                                    distinction. Forte
@@ -95,14 +97,14 @@
           <!-- ABOUT -->
 
           <!-- BANNER -->
-          <section class="bg-dark text-light text-center lg:text-xl md:text-lg sm:text-sm md:py-12 sm:py-7 xs:py-5 py-3">
+          <section class="wow fadeInUp bg-dark text-light text-center lg:text-xl md:text-lg sm:text-sm md:py-12 sm:py-7 xs:py-5 py-3">
                <h2 class="lg:w-3/5 mx-auto">“ If you're not failing every now and again, it's a sign you're not doing anything very innovative. “</h2>
           </section>
           <!-- BANNER -->
 
           <!-- BLOG -->
           <section class="md:py-20 py-10">
-               <div class="sl-container">
+               <div class="wow fadeInDown sl-container">
                     <div class="flex flex-wrap justify-center">
                          <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
                               <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
@@ -158,7 +160,7 @@
      <!-- MAIN -->
 
      <!-- FOOTER -->
-     <footer class="pt-5 md:text-left text-center">
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
           <div class="flex flex-wrap items-center max-w-screen-xl">
                <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
                     <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
@@ -179,6 +181,14 @@
           <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
      </footer>
      <!-- FOOTER -->
+     
+     <!-- ANIMATION -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/wowJS/wow.min.js"></script>
+     <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+     </script>
 </body>
 
 </html>

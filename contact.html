@@ -17,6 +17,8 @@
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="assets/vendor/wowJS/animate.css">
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
      <style>
@@ -116,7 +118,7 @@
           <!-- HERO -->
           <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-72 md:py-40 py-20 before:absolute before:inset-0 before:bg-dark/85"
                style="background-image: url(assets/img/hero-3.png);">
-               <div class="relative sl-container text-center z-10">
+               <div class="wow fadeInDown relative sl-container text-center z-10">
                     <h2 class="lg:text-5xl md:text-3xl sm:text-2xl text-xl font-bold md:mb-6 mb-4">LETS GET TO KNOW EACH OTHER</h2>
                     <p class="lg:text-lg md:text-base sm:text-sm font-light">Ready to launch your project? Contact us, and we will respond within 24 hours.</p>
                </div>
@@ -171,7 +173,7 @@
           <!-- MARQUEE -->
 
           <!-- FORM -->
-          <section class="md:py-20 sm:py-12 py-9">
+          <section class="wow fadeInUp md:py-20 sm:py-12 py-9">
                <div class="sl-container">
                     <div class="text-center md:mb-12 mb-8">
                          <h2 class="md:text-4xl sm:text-2xl xs:text-xl text-lg font-medium md:mb-6 sm:mb-4 mb-2">INQUIRE FORM</h2>
@@ -273,7 +275,7 @@
      <!-- MAIN -->
 
      <!-- FOOTER -->
-     <footer class="pt-5 md:text-left text-center">
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
           <div class="flex flex-wrap items-center max-w-screen-xl">
                <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
                     <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
@@ -294,6 +296,14 @@
           <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
      </footer>
      <!-- FOOTER -->
+     
+     <!-- ANIMATION -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/wowJS/wow.min.js"></script>
+     <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+     </script>
 </body>
 
 </html>

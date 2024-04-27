@@ -17,6 +17,8 @@
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="assets/vendor/wowJS/animate.css">
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -72,7 +74,7 @@
      <!-- MAIN -->
      <main class="mt-16 bg-light text-dark">
           <!-- HERO -->
-          <section class="md:py-20 py-12">
+          <section class="wow fadeInDown md:py-20 py-12">
                <div class="sl-container text-center">
                     <h2 class="lg:text-5xl sm:text-2xl text-xl font-bold md:mb-5 mb-2 uppercase">A Glimpse into My Projects</h2>
                     <p class="lg:text-xl md:text-lg text-sm font-light">- My Portfolio - </p>
@@ -81,7 +83,7 @@
           <!-- HERO -->
 
           <!-- BRANDING -->
-          <section class="md:pb-20 pb-12">
+          <section class="wow fadeInUp md:pb-20 pb-12">
                <div class="sl-container">
                     <h2 class="bg-stone text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3">Branding</h2>
                     <div class="flex flex-wrap justify-center">
@@ -123,7 +125,7 @@
           <!-- BRANDING -->
 
           <!-- BRANDING -->
-          <section class="md:pb-20 pb-12">
+          <section class="wow fadeInUp md:pb-20 pb-12">
                <div class="sl-container">
                     <h2 class="bg-slate text-light lg:text-xl sm:text-lg text-base px-4 py-2 mx-3">Print</h2>
                     <div class="flex flex-wrap justify-center">
@@ -165,7 +167,7 @@
           <!-- BRANDING -->
 
           <!-- BRANDING -->
-          <section class="md:pb-20 pb-12">
+          <section class="wow fadeInUp md:pb-20 pb-12">
                <div class="sl-container">
                     <h2 class="bg-dark text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3">Web Design</h2>
                     <div class="flex flex-wrap justify-center">
@@ -207,7 +209,7 @@
           <!-- BRANDING -->
 
           <!-- TALK -->
-          <section class="lg:pb-40 md:pb-20 pb-12 max-w-xl w-full text-center mx-auto">
+          <section class="lwow fadeIn g:pb-40 md:pb-20 pb-12 max-w-xl w-full text-center mx-auto">
                <p class="font-light md:mb-12 sm:mb-8 xs:mb-4 mb-2 px-6">Interested in exploring further or learning more about my projects ? Feel free to reach out and get in touch !</p>
                <a href="contact.html" class="bg-slate text-light border-2 border-slate py-2 px-6 rounded-md hover:bg-light hover:text-slate">Lets talk</a>
           </section>
@@ -216,7 +218,7 @@
      <!-- MAIN -->
 
      <!-- FOOTER -->
-     <footer class="pt-5 md:text-left text-center">
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
           <div class="flex flex-wrap items-center max-w-screen-xl">
                <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
                     <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src="assets/img/logo-sm.png" alt="logo"></a>
@@ -237,6 +239,14 @@
           <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
      </footer>
      <!-- FOOTER -->
+     
+     <!-- ANIMATION -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/wowJS/wow.min.js"></script>
+     <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+     </script>
 </body>
 
 </html>
