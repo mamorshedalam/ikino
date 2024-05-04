@@ -3,7 +3,7 @@
 
 <head>
      <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta x-model="data.viewport" content="width=device-width, initial-scale=1.0">
 
      <!-- TITLE & FAVICON -->
      <link rel="icon" href="./assets/img/logo.png" />
@@ -19,11 +19,82 @@
      <link href="./assets/css/output.css" rel="stylesheet">
      <!-- ANIMATION -->
      <link rel="stylesheet" href="assets/vendor/wowJS/animate.css">
+     <!-- EMAIL JS -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <!-- OWN SCRIPT -->
+     <script>
+          function contactForm() {
+               return {
+                    data: {
+                         firstName: "",
+                         lastName: "",
+                         email: "",
+                         brand: "",
+                         location: "",
+                         phone: "",
+                         store: "",
+                         media: "",
+                         message: "",
+                         target: "",
+                         style: "",
+                         service: [],
+                         question: "",
+                    },
+                    buttonText: "Send",
+                    loading: false,
+
+                    submit() {
+                         const submitData = {
+                              firstName: this.data.firstName,
+                              lastName: this.data.lastName,
+                              email: this.data.email,
+                              brand: this.data.brand,
+                              location: this.data.location,
+                              phone: this.data.phone,
+                              store: this.data.store,
+                              media: this.data.media,
+                              message: this.data.message,
+                              target: this.data.target,
+                              style: this.data.style,
+                              service: JSON.stringify(this.data.service),
+                              question: this.data.question,
+                         }
+                         this.buttonText = "Sending...";
+                         this.loading = true;
+
+                         // EMAIL JS INIT
+                         (function () {
+                              emailjs.init({
+                                   publicKey: "GnTwbxred1KHRh1oA",
+                              });
+                         })();
+
+                         const serviceID = "service_tl3bhiv";
+                         const templateID = "template_9wo0gyf";
+                         emailjs.send(serviceID, templateID, submitData)
+                              .then((response) => {
+                                   alert("Sending Successful");
+                              })
+                              .catch((error) => {
+                                   alert("Sending Fail!");
+                                   console.log(error);
+                              })
+                              .finally(() => {
+                                   this.data.message = "";
+                                   this.buttonText = "Send";
+                                   this.loading = false;
+                              });
+                    },
+
+               };
+
+          }
+     </script>
      <style>
-          input[type="radio"], 
-          input[type="checkbox"]{
+          input[type="radio"],
+          input[type="checkbox"] {
                appearance: none;
                position: relative;
                background-color: #F0EAE1;
@@ -54,13 +125,15 @@
           input[type="checkbox"]:checked::before {
                transform: scale(1);
           }
+
           @media (max-width: 480px) {
-          input[type="radio"], 
-          input[type="checkbox"]{
-               width: 12px;
-               height: 12px;
-               border-radius: 15%;
-          }
+
+               input[type="radio"],
+               input[type="checkbox"] {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 15%;
+               }
           }
      </style>
 </head>
@@ -180,94 +253,102 @@
                          <p class="max-w-xl font-light mx-auto">Please complete the form below to provide more details about the service you're seeking. I will get in touch with you at the earliest
                               opportunity.</p>
                     </div>
-                    <div class="flex flex-wrap font-light">
+                    <form x-data="contactForm()" @submit.prevent="submit" class="flex flex-wrap font-light">
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="firstName">Fast Name</label>
-                              <input id="firstName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.firstName" id="firstName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="lastName">Last Name</label>
-                              <input id="lastName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.lastName" id="lastName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="email">Email</label>
-                              <input id="email" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.email" id="email" type="email" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="brand">Company / Brand Name</label>
-                              <input id="brand" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.brand" id="brand" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..."
+                                   required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="location">Location</label>
-                              <input id="location" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.location" id="location" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <label for="phone">Phone</label>
-                              <input id="phone" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.phone" id="phone" type="tel" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..."
+                                   required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <p class="mb-2">Are you an online or offline store</p>
                               <div class="flex items-center gap-2">
-                                   <input type="radio" name="store" id="online" value="online" class="">
+                                   <input type="radio" x-model="data.store" id="online" value="online" required>
                                    <label class="mb-1 mr-6" for="online">Online</label>
-                                   <input type="radio" name="store" id="offline" value="offline" class="">
+                                   <input type="radio" x-model="data.store" id="offline" value="offline" required>
                                    <label class="mb-1" for="offline">Offline</label>
                               </div>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <p class="mb-2">Does your brand have social media ?</p>
                               <div class="flex items-center gap-2">
-                                   <input type="radio" name="media" id="yes" value="yes" class="">
+                                   <input type="radio" x-model="data.media" id="yes" value="yes" required>
                                    <label class="mb-1 mr-6" for="yes">Yes</label>
-                                   <input type="radio" name="media" id="no" value="no" class="mr-2">
+                                   <input type="radio" x-model="data.media" id="no" value="no" class="mr-2" required>
                                    <label class="mb-1" for="no">No</label>
                               </div>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="message">Tell me more about your business ? <span class="md:text-sm">(what do your offer ? What do you sell ? What is your main objective)</span></label>
-                              <textarea id="message" class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2"
-                                   placeholder="..."></textarea>
+                              <textarea x-model="data.message" id="message" class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required></textarea>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="target">What’s your target audience ?</label>
-                              <input id="target" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <input x-model="data.target" id="target" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
-                              <label for="message">How would you describe your brand’s style ? <span class="text-sm"></span>(minimalist, colorful, neutral, old school...)</span></label>
-                              <input id="target" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="...">
+                              <label for="style">How would you describe your brand’s style ? <span class="text-sm"></span>(minimalist, colorful, neutral, old school...)</span></label>
+                              <input x-model="data.style" id="style" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..."
+                                   required>
                          </div>
                          <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
                               <p class="mb-2">What services do you need ?</p>
                               <div class="flex items-center gap-2 mb-2">
-                                   <input type="checkbox" name="service" id="branding">
+                                   <input type="checkbox" x-model="data.service" value="branding" id="branding">
                                    <label class="mb-1" for="branding">Branding</label>
                               </div>
                               <div class="flex items-center gap-2 mb-2">
-                                   <input type="checkbox" name="service" id="print">
+                                   <input type="checkbox" x-model="data.service" value="print" id="print">
                                    <label class="mb-1" for="print">Print</label>
                               </div>
                               <div class="flex items-center gap-2 mb-2">
-                                   <input type="checkbox" name="service" id="packing">
+                                   <input type="checkbox" x-model="data.service" value="packing" id="packing">
                                    <label class="mb-1" for="packing">Packaging</label>
                               </div>
                               <div class="flex items-center gap-2 mb-2">
-                                   <input type="checkbox" name="service" id="social">
+                                   <input type="checkbox" x-model="data.service" value="social" id="social">
                                    <label class="mb-1" for="social">Social Media</label>
                               </div>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <label for="question">Do you have any questions for me ?</label>
-                              <textarea id="question" class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2"
-                                   placeholder="..."></textarea>
+                              <textarea x-model="data.question" id="question"
+                                   class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..." required></textarea>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
                               <p class="sm:text-xs italic opacity-75">N.B : I prioritize ethical partnerships, selectively engaging with clients and declining those who promote alcohol, violence, or
                                    values misaligned with ours. Thank you for your understanding.</p>
                          </div>
                          <div class="w-full md:mb-9 mb-6 md:px-3">
-                              <a href="" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">Send</a>
+                              <button type="submit" x-text="buttonText" :disabled="loading" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">Send</butt>
                          </div>
-                    </div>
+                    </form>
                </div>
           </section>
           <!-- FORM -->
@@ -296,7 +377,7 @@
           <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
      </footer>
      <!-- FOOTER -->
-     
+
      <!-- ANIMATION -->
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <script src="assets/vendor/wowJS/wow.min.js"></script>
