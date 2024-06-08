@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- TITLE & FAVICON -->
+     <link rel="icon" href=" ../assets/img/logo.png" />
+     <title>Ikino || Work with me</title>
+
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+     <!-- GOOGLE FONTS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+     <!-- TAILWIND CSS -->
+     <link href="../assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="../assets/vendor/wowJS/animate.css">
+     <!-- EMAIL JS -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+     <!-- ALPINE JS -->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <!-- OWN SCRIPT -->
+     <script>
+          function contactForm() {
+               return {
+                    data: {
+                         firstName: "",
+                         lastName: "",
+                         email: "",
+                         brand: "",
+                         location: "",
+                         phone: "",
+                         store: "",
+                         media: "",
+                         message: "",
+                         target: "",
+                         style: "",
+                         service: [],
+                         question: "",
+                    },
+                    buttonText: "Send",
+                    loading: false,
+
+                    submit() {
+                         const submitData = {
+                              firstName: this.data.firstName,
+                              lastName: this.data.lastName,
+                              email: this.data.email,
+                              brand: this.data.brand,
+                              location: this.data.location,
+                              phone: this.data.phone,
+                              store: this.data.store,
+                              media: this.data.media,
+                              message: this.data.message,
+                              target: this.data.target,
+                              style: this.data.style,
+                              service: JSON.stringify(this.data.service),
+                              question: this.data.question,
+                         }
+                         this.buttonText = "Sending...";
+                         this.loading = true;
+
+                         // EMAIL JS INIT
+                         (function () {
+                              emailjs.init({
+                                   publicKey: "GnTwbxred1KHRh1oA",
+                              });
+                         })();
+
+                         const serviceID = "service_tl3bhiv";
+                         const templateID = "template_9wo0gyf";
+                         emailjs.send(serviceID, templateID, submitData)
+                              .then((response) => {
+                                   alert("Sending Successful");
+                              })
+                              .catch((error) => {
+                                   alert("Sending Fail!");
+                                   console.log(error);
+                              })
+                              .finally(() => {
+                                   this.data.message = "";
+                                   this.buttonText = "Send";
+                                   this.loading = false;
+                              });
+                    },
+
+               };
+
+          }
+     </script>
+     <style>
+          input[type="radio"], 
+          input[type="checkbox"]{
+               appearance: none;
+               position: relative;
+               background-color: #F0EAE1;
+               margin: 0;
+               font: inherit;
+               color: currentColor;
+               width: 15px;
+               height: 15px;
+               border: 1px solid #2E2E2C;
+               border-radius: 25%;
+               transform: translateY(-0.075em);
+          }
+
+          input[type="radio"]::before,
+          input[type="checkbox"]::before {
+               position: absolute;
+               content: "";
+               display: block;
+               width: 100%;
+               height: 100%;
+               border-radius: 25%;
+               transform: scale(0);
+               transition: 120ms transform ease-in-out;
+               background-color: #746c42;
+          }
+
+          input[type="radio"]:checked::before,
+          input[type="checkbox"]:checked::before {
+               transform: scale(1);
+          }
+          @media (max-width: 480px) {
+          input[type="radio"], 
+          input[type="checkbox"]{
+               width: 12px;
+               height: 12px;
+               border-radius: 15%;
+          }
+          }
+     </style>
+</head>
+
+<body x-cloak x-data="{sidebar: false}">
+
+     <!-- SIDEBAR -->
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+          <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src=" ../assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
+          <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
+               <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src=" ../assets/img/logo.png" alt="logo"></a></li>
+               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
+               <li><a href="about.html" class="font-semibold py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
+          </ul>
+     </aside>
+     <!-- SIDEBAR -->
+
+     <!-- HEADER -->
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src=" ../assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="font-semibold mr-10 hover:text-light/85">Work with me</a></li>
+               </ul>
+               <div x-data="{active: false}">
+                    <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
+                          <span>French</span>
+                         <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                              <path
+                                   d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                         </svg>
+                    </button>
+                    <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/contact.html">English</a></li>
+                         <li class="py-1.5 px-5 cursor-pointer">French</li>
+                    </ul>
+               </div>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src=" ../assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src=" ../assets/img/bars.svg" alt="bar" class="w-5"></button>
+          </nav>
+     </header>
+     <!-- HEADER -->
+
+     <!-- MAIN -->
+     <main class="mt-16 text-dark bg-light">
+          <!-- HERO -->
+          <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-72 md:py-40 py-20 before:absolute before:inset-0 before:bg-dark/85"
+               style="background-image: url( ../assets/img/work\ with\ me.png);">
+               <div class="wow fadeInDown relative sl-container text-center z-10">
+                    <h2 class="lg:text-5xl md:text-3xl sm:text-2xl text-xl font-bold md:mb-6 mb-4">LETS GET TO KNOW EACH OTHER</h2>
+                    <p class="lg:text-lg md:text-base sm:text-sm font-light">Ready to launch your project? Contact us, and we will respond within 24 hours.</p>
+               </div>
+          </section>
+          <!-- HERO -->
+
+          <!-- MARQUEE -->
+          <section class="overflow-hidden bg-slate text-light">
+               <div class="sl-marque-text">
+                    <ul>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                         <li>Let's grow your brand</li>
+                    </ul>
+               </div>
+          </section>
+          <!-- MARQUEE -->
+
+          <!-- FORM -->
+          <section class="wow fadeInUp md:py-20 sm:py-12 py-9">
+               <div class="sl-container">
+                    <div class="text-center md:mb-12 mb-8">
+                         <h2 class="md:text-4xl sm:text-2xl xs:text-xl text-lg font-medium md:mb-6 sm:mb-4 mb-2">INQUIRE FORM</h2>
+                         <p class="max-w-xl font-light mx-auto">Please complete the form below to provide more details about the service you're seeking. I will get in touch with you at the earliest
+                              opportunity.</p>
+                    </div>
+                    <form x-data="contactForm()" @submit.prevent="submit" class="flex flex-wrap font-light">
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="firstName">Fast Name</label>
+                              <input x-model="data.firstName" id="firstName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="lastName">Last Name</label>
+                              <input x-model="data.lastName" id="lastName" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="email">Email</label>
+                              <input x-model="data.email" id="email" type="email" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="brand">Company / Brand Name</label>
+                              <input x-model="data.brand" id="brand" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..."
+                                   required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="location">Location</label>
+                              <input x-model="data.location" id="location" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <label for="phone">Phone</label>
+                              <input x-model="data.phone" id="phone" type="tel" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..."
+                                   required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <p class="mb-2">Are you an online or offline store</p>
+                              <div class="flex items-center gap-2">
+                                   <input type="radio" x-model="data.store" id="online" value="online" required>
+                                   <label class="mb-1 mr-6" for="online">Online</label>
+                                   <input type="radio" x-model="data.store" id="offline" value="offline" required>
+                                   <label class="mb-1" for="offline">Offline</label>
+                              </div>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <p class="mb-2">Does your brand have social media ?</p>
+                              <div class="flex items-center gap-2">
+                                   <input type="radio" x-model="data.media" id="yes" value="yes" required>
+                                   <label class="mb-1 mr-6" for="yes">Yes</label>
+                                   <input type="radio" x-model="data.media" id="no" value="no" class="mr-2" required>
+                                   <label class="mb-1" for="no">No</label>
+                              </div>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="message">Tell me more about your business ? <span class="md:text-sm">(what do your offer ? What do you sell ? What is your main objective)</span></label>
+                              <textarea x-model="data.message" id="message" class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required></textarea>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="target">What’s your target audience ?</label>
+                              <input x-model="data.target" id="target" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2"
+                                   placeholder="..." required>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="style">How would you describe your brand’s style ? <span class="text-sm"></span>(minimalist, colorful, neutral, old school...)</span></label>
+                              <input x-model="data.style" id="style" type="text" class="w-full rounded-lg pl-3.5 h-8 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..."
+                                   required>
+                         </div>
+                         <div class="md:w-1/2 w-full md:mb-9 mb-6 md:px-3">
+                              <p class="mb-2">What services do you need ?</p>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" x-model="data.service" value="branding" id="branding">
+                                   <label class="mb-1" for="branding">Branding</label>
+                              </div>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" x-model="data.service" value="print" id="print">
+                                   <label class="mb-1" for="print">Print</label>
+                              </div>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" x-model="data.service" value="packing" id="packing">
+                                   <label class="mb-1" for="packing">Packaging</label>
+                              </div>
+                              <div class="flex items-center gap-2 mb-2">
+                                   <input type="checkbox" x-model="data.service" value="social" id="social">
+                                   <label class="mb-1" for="social">Social Media</label>
+                              </div>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <label for="question">Do you have any questions for me ?</label>
+                              <textarea x-model="data.question" id="question"
+                                   class="w-full rounded-md py-1 px-3 rounded-lg:hl-3.5 h-20 border border-dark/25 focus:border-green hover:border-green mt-2" placeholder="..." required></textarea>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <p class="sm:text-xs italic opacity-75">N.B : I prioritize ethical partnerships, selectively engaging with clients and declining those who promote alcohol, violence, or
+                                   values misaligned with ours. Thank you for your understanding.</p>
+                         </div>
+                         <div class="w-full md:mb-9 mb-6 md:px-3">
+                              <button type="submit" x-text="buttonText" :disabled="loading" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">Send</butt>
+                         </div>
+                    </form>
+               </div>
+          </section>
+          <!-- FORM -->
+     </main>
+     <!-- MAIN -->
+
+     <!-- FOOTER -->
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
+          <div class="flex flex-wrap items-center max-w-screen-xl">
+               <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
+                    <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src=" ../assets/img/logo-sm.png" alt="logo"></a>
+               </div>
+               <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
+                    <ul class="flex flex-wrap">
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="md:text-xs hover:opacity-75">Home</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="md:text-xs hover:opacity-75">Work with me</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="md:text-xs hover:opacity-75">Instagram</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="md:text-xs hover:opacity-75">Portfolio</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="md:text-xs hover:opacity-75">Blog</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Branding</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Web Design</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="md:text-xs hover:opacity-75">About me</a></li>
+                    </ul>
+               </div>
+          </div>
+          <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
+     </footer>
+     <!-- FOOTER -->
+     
+     <!-- ANIMATION -->
+     <script src="../assets/vendor/jquery/jquery-3.6.0.js"></script>
+     <script src="../assets/vendor/wowJS/wow.min.js"></script>
+     <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+     </script>
+</body>
+
+</html>

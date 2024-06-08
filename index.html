@@ -25,10 +25,10 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{sidebar: false}">
+<body x-cloak x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
@@ -54,20 +54,20 @@
                     <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
                     <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
-               <div x-data="{active: false, show: 'French'}">
+               <div x-data="{active: false}">
                     <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
-                         <span x-text="show"></span>
+                         <span>English</span>
                          <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path
                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                          </svg>
                     </button>
                     <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
-                         <li @click="show = 'English'; active = !active" class="py-1.5 px-5 cursor-pointer">English</li>
-                         <li @click="show = 'French'; active = !active" class="py-1.5 px-5 cursor-pointer">French</li>
+                         <li class="py-1.5 px-5 cursor-pointer">English</li>
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/fn/index.html">French</a></li>
                     </ul>
                </div>
-               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
@@ -76,7 +76,7 @@
      <!-- MAIN -->
      <main class="mt-14">
           <!-- HERO -->
-          <section class="wow fadeIn bg-cover bg-center bg-no-repeat lg:pt-72 md:pt-32 md:pb-60 py-12" style="background-image: url(assets/img/hero.png);">
+          <section class="wow fadeIn bg-cover bg-center bg-no-repeat lg:pt-72 md:pt-32 md:pb-60 py-12" style="background-image: url(assets/img/Home-image.jpg);">
                <div class="sl-container text-center">
                     <h1 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl leading-relaxed lg:mb-20 md:mb-16 sm:mb-8 mb-5">Let’s Create Inspiring Designs With Lasting Impression</h1>
                     <a href="contact.html" class="bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark">Let’s work together</a>
@@ -176,17 +176,10 @@
                <div class="sl-container">
                     <div class="flex flex-wrap items-center">
                          <div class="wow fadeInLeft lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
-                              <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-6 mb-4">Ikino Design Co</h2>
-                              <p class="lg:w-4/5 font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Bienvenue sur le portfolio d'Ikino, une talentueuse web et graphic designer diplômée avec
-                                   distinction. Forte
-                                   d'une
-                                   expérience variée,
-                                   Ikino
-                                   excelle dans la création
-                                   d'interfaces web intuitives et de designs graphiques percutants. Son engagement envers l'excellence artistique transparaît à travers une série de projets réussis,
-                                   démontrant sa capacité à traduire les besoins spécifiques des clients en créations visuelles remarquables. Explorez ce portfolio pour découvrir l'expertise unique
-                                   d'Ikino, où chaque projet devient une fusion de créativité et de fonctionnalité, captivant le regard et offrant une expérience visuelle mémorable.</p>
-                              <a href="about.html" class="bg-slate text-light border-2 border-slate py-2 px-6 rounded-md hover:bg-light hover:text-slate">More about me</a>
+                              <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-6 mb-4 font font-medium">Ikino Design Co</h2>
+                              <p class="lg:w-4/5 font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Welcome to my portfolio. I'm Ikino, a skilled web and graphic designer, honored with distinction upon
+                                   graduation. With a wealth of experience, I specialize in crafting intuitive web interfaces and impactful graphic designs.</p>
+                              <a href="about.html" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">More about me</a>
                          </div>
                          <div class="wow fadeInRight md:block hidden lg:w-2/5 md:w-1/2 w-full md:pl-3"><img src="assets/img/imageaboutme.png" alt=""></div>
                     </div>
@@ -244,7 +237,7 @@
                     <div class="md:w-full w-3/5 ml-auto md:pl-0 xs:pl-5 pl-2">
                          <h2 class="wow fadeInDown font-light lg:text-7xl md:text-4xl sm:text-xl text-lg md:mb-12 sm:mb-8 mb-5">What do we provide</h2>
                          <div class="flex flex-wrap items-center">
-                              <div class="wow fadeInLeft md:block hidden lg:w-2/5 w-1/2"><img src="assets/img/imageprovide.png" alt=""></div>
+                              <div class="wow fadeInLeft md:block hidden lg:w-2/5 w-1/2"><img src="assets/img/provide image.png" alt=""></div>
                               <div class="wow fadeInRight lg:w-3/5 md:w-1/2 w-full lg:pl-10 md:pl-6">
                                    <ul class="font-light" x-data="{active: 0}">
                                         <li class="md:mb-6 mb-2.5 overflow-hidden">
@@ -314,7 +307,7 @@
                          </div>
                     </div>
                     <div class="wow fadeInLeft absolute md:hidden block left-0 top-0 w-2/5 h-full">
-                         <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
+                         <img src="assets/img/provide image.png" alt="" class="h-full object-cover">
                     </div>
                </div>
           </section>
@@ -323,7 +316,7 @@
           <!-- REVIEW -->
           <section class="bg-slate text-dark text-center py-6">
                <div class="bg-light md:py-20 py-12">
-                    <h2 class="wow fadeInDown lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-12 sm:mb-9 mb-5">Client’s love</h2>
+                    <h2 class="wow fadeInDown lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-12 sm:mb-9 mb-5 font-semibold">Client’s love</h2>
                     <div class="sl-container">
                          <div class="wow fadeInUp swiper reviewSlider">
                               <div class="swiper-wrapper">
@@ -351,39 +344,38 @@
           <!-- PROCESS -->
           <section class="bg-light text-dark overflow-hidden">
                <div class="wow fadeInLeft md:w-1/2 w-4/5 md:py-20 py-12 md:pr-12 pr-6 sm:pl-6 pl-3">
-                    <h2 class="lg:text-5xl sm:text-2xl text-xl md:mb-9 sm:mb-6 mb-4">The Process</h2>
+                    <h2 class="lg:text-5xl sm:text-2xl text-xl md:mb-9 sm:mb-6 mb-4 font-medium">The Process</h2>
                     <ul>
                          <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
                               <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">01. Inquire</h3>
-                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                   enim ad minim veniam, quis nostrud exercitation</p>
+                              <p class="font-light md:text-sm mb-2">We have an initial conversation to discuss your needs, ideas, and goals. I take the time to thoroughly understand your vision in
+                                   order to offer you the best solutions for your project.</p>
                          </li>
                          <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
                               <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">02. Planning and Contract</h3>
-                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                   enim ad minim veniam, quis nostrud exercitation</p>
+                              <p class="font-light md:text-sm mb-2">Once we have established the foundations of your project, we move on to the planning stage. Together, we define deadlines, necessary
+                                   resources, and project details. Then, we establish an agreement to formalize our collaboration and ensure transparency throughout the process.</p>
                          </li>
                          <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
                               <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">03. Design</h3>
-                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                   enim ad minim veniam, quis nostrud exercitation</p>
+                              <p class="font-light md:text-sm mb-2">It's time to unleash creativity! I work to bring your vision to life through unique and impactful designs. I stay in touch with you
+                                   throughout the process to keep you informed of progress and gather your feedback.</p>
                          </li>
                          <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
                               <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">04. Delivery</h3>
-                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                   enim ad minim veniam, quis nostrud exercitation</p>
+                              <p class="font-light md:text-sm mb-2">Once you are satisfied with the result, I proceed to finalize the project, ensuring that all details are perfectly in place. Then, I
+                                   deliver all final files you need to implement your new design.</p>
                          </li>
                          <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
-                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">05. Your brand’s ready to success</h3>
-                              <p class="font-light md:text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                   enim ad minim veniam, quis nostrud exercitation</p>
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">05. Your brand’s ready to success !!</h3>
+                              <p class="font-light md:text-sm mb-2">And there you have it ! your project is ready to take flight ! With a professional and polished design, your brand is prepared to
+                                   stand out and captivate your target audience !</p>
                          </li>
                     </ul>
-                    <div class="text-right"><a href="contact.html" class="bg-dark text-light border-2 border-dark py-1 md:text-sm px-4 rounded-md hover:bg-light hover:text-dark">Let’s work
-                              together</a></div>
+                    <div class="text-right"><a href="contact.html" class="bg-dark text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-slate">Let’s work together</a></div>
                </div>
                <div class="wow fadeInRight absolute right-0 top-0 md:w-1/2 w-1/5 h-full">
-                    <img src="assets/img/Rectangle.png" alt="" class="h-full object-cover">
+                    <img src="assets/img/process image.png" alt="" class="h-full object-cover">
                </div>
           </section>
           <!-- PROCESS -->
@@ -416,7 +408,7 @@
      <!-- SCRIPT LINKS -->
      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
      <!-- ANIMATION -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/jquery/jquery-3.6.0.js"></script>
      <script src="assets/vendor/wowJS/wow.min.js"></script>
      <script>
           // WOW JS ANIMATION ADDED

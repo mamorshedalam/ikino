@@ -7,7 +7,7 @@
 
      <!-- TITLE & FAVICON -->
      <link rel="icon" href="./assets/img/logo.png" />
-     <title>Ikino || Portfolio</title>
+     <title>Ikino || Projets</title>
 
      <!-- FONT AWESOME -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -23,10 +23,10 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{sidebar: false}">
+<body x-cloak x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
@@ -52,20 +52,20 @@
                     <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
                     <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
-               <div x-data="{active: false, show: 'French'}">
+               <div x-data="{active: false}">
                     <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
-                         <span x-text="show"></span>
+                         <span>English</span>
                          <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path
                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                          </svg>
                     </button>
                     <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
-                         <li @click="show = 'English'; active = !active" class="py-1.5 px-5 cursor-pointer">English</li>
-                         <li @click="show = 'French'; active = !active" class="py-1.5 px-5 cursor-pointer">French</li>
+                         <li class="py-1.5 px-5 cursor-pointer">English</li>
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/fn/project.html">French</a></li>
                     </ul>
                </div>
-               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
@@ -75,7 +75,7 @@
      <main class="mt-16 bg-light text-dark">
           <section>
                <div class="sl-container">
-                    <div class="wow fadeInDown sm:py-10 py-6"><a href="contact.html" class="text-light bg-slate md:py-2 py-1 md:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate md:text-sm">Retourner aux projets</a></div>
+                    <div class="wow fadeInDown sm:py-10 py-6"><a href="contact.html" class="text-light bg-slate md:py-2 py-1 md:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate md:text-sm">Return to projects</a></div>
                     <div class="wow fadeInUp flex flex-wrap w-full pb-4 sm:pt-2">
                          <div class="xl:w-1/5 xs:w-1/4 xs:pr-0 pr-3">
                               <p class="text-black/50 font-light md:text-sm">Client</p>
@@ -130,7 +130,7 @@
      <!-- FOOTER -->
      
      <!-- ANIMATION -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/jquery/jquery-3.6.0.js"></script>
      <script src="assets/vendor/wowJS/wow.min.js"></script>
      <script>
           // WOW JS ANIMATION ADDED

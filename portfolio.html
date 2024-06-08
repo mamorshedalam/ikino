@@ -23,10 +23,10 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{sidebar: false}">
+<body x-cloak x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
@@ -52,20 +52,20 @@
                     <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
                     <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
-               <div x-data="{active: false, show: 'French'}">
+               <div x-data="{active: false}">
                     <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
-                         <span x-text="show"></span>
+                         <span>English</span>
                          <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path
                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                          </svg>
                     </button>
                     <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
-                         <li @click="show = 'English'; active = !active" class="py-1.5 px-5 cursor-pointer">English</li>
-                         <li @click="show = 'French'; active = !active" class="py-1.5 px-5 cursor-pointer">French</li>
+                         <li class="py-1.5 px-5 cursor-pointer">English</li>
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/fn/portfolio.html">French</a></li>
                     </ul>
                </div>
-               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
@@ -85,38 +85,74 @@
           <!-- BRANDING -->
           <section class="wow fadeInUp md:pb-20 pb-12">
                <div class="sl-container">
-                    <h2 class="bg-stone text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3">Branding</h2>
+                    <h2 class="bg-stone text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3 font-light fond">Branding</h2>
                     <div class="flex flex-wrap justify-center">
                          <div class="md:w-1/2 w-full md:px-3 mt-6">
                               <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 106.jpg" alt="projects" class="rounded-3xl">
+                                   <img src="assets/img/Touchou brand@5x.png" alt="projects" class="rounded-3xl">
                                    <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">Touchou</a>
                               </div>
                          </div>
                          <div class="md:w-1/2 w-full md:px-3 mt-6">
                               <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 107.jpg" alt="projects" class="rounded-3xl">
+                                   <img src="assets/img/lolivier garni@5x.png" alt="projects" class="rounded-3xl">
                                    <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">Tacos Corner</a>
                               </div>
                          </div>
                          <div class="md:w-1/2 w-full md:px-3 mt-6">
                               <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 108.jpg" alt="projects" class="rounded-3xl">
+                                   <img src="assets/img/takai branding@5x.png" alt="projects" class="rounded-3xl">
                                    <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible ">Takai - Sushis Restaurant</a>
                               </div>
                          </div>
                          <div class="md:w-1/2 w-full md:px-3 mt-6">
                               <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 109.jpg" alt="projects" class="rounded-3xl">
+                                   <img src="assets/img/Hanami bloom site@5x.png" alt="projects" class="rounded-3xl">
                                    <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">Hanami Bloom</a>
+                              </div>
+                         </div>
+
+                         
+                    </div>
+               </div>
+          </section>
+          <!-- BRANDING -->
+
+          <!-- BRANDING -->
+          <section class="wow fadeInUp md:pb-20 pb-12">
+               <div class="sl-container">
+                    <h2 class="bg-slate text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3 font-light fond ">Print</h2>
+                    <div class="flex flex-wrap justify-center">
+                         <div class="md:w-1/2 w-full md:px-3 mt-6">
+                              <div class="group relative cursor-pointer">
+                                   <img src="assets/img/Carte imane@5x.png" alt="projects" class="rounded-3xl">
+                                   <a href="project.html"
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">Buisness Card</a>
+                              </div>
+                         </div>
+                         <div class="md:w-1/2 w-full md:px-3 mt-6">
+                              <div class="group relative cursor-pointer">
+                                   <img src="assets/img/amds carte@5x.png" alt="projects" class="rounded-3xl">
+                                   <a href="project.html"
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">AMDS - Buisness Card</a>
+                              </div>
+                         </div>
+                         <div class="md:w-1/2 w-full md:px-3 mt-6">
+                              <div class="group relative cursor-pointer">
+                                   <img src="assets/img/justeatit flyer@5x.png" alt="projects" class="rounded-3xl">
+                                   <a href="project.html"
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Flyers</a>
+                              </div>
+                         </div>
+                         <div class="md:w-1/2 w-full md:px-3 mt-6">
+                              <div class="group relative cursor-pointer">
+                                   <img src="assets/img/POSTER@5x.png" alt="projects" class="rounded-3xl">
+                                   <a href="project.html"
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">Posters</a>
                               </div>
                          </div>
                     </div>
@@ -127,82 +163,24 @@
           <!-- BRANDING -->
           <section class="wow fadeInUp md:pb-20 pb-12">
                <div class="sl-container">
-                    <h2 class="bg-slate text-light lg:text-xl sm:text-lg text-base px-4 py-2 mx-3">Print</h2>
+                    x<h2 class="bg-dark text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3 font-light fond">Web Design</h2>
                     <div class="flex flex-wrap justify-center">
                          <div class="md:w-1/2 w-full md:px-3 mt-6">
                               <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 115.jpg" alt="projects" class="rounded-3xl">
+                                   <img src="assets/img/touchou site@5x.png" alt="projects" class="rounded-3xl">
                                    <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Touchou Website</a>
                               </div>
                          </div>
                          <div class="md:w-1/2 w-full md:px-3 mt-6">
                               <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 110.jpg" alt="projects" class="rounded-3xl">
+                                   <img src="assets/img/Hmo app@5x.png" alt="projects" class="rounded-3xl">
                                    <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
+                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible text-light">Hear Me Out</a>
+                                        
                               </div>
                          </div>
-                         <div class="md:w-1/2 w-full md:px-3 mt-6">
-                              <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 111.jpg" alt="projects" class="rounded-3xl">
-                                   <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
-                              </div>
-                         </div>
-                         <div class="md:w-1/2 w-full md:px-3 mt-6">
-                              <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 114.jpg" alt="projects" class="rounded-3xl">
-                                   <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </section>
-          <!-- BRANDING -->
-
-          <!-- BRANDING -->
-          <section class="wow fadeInUp md:pb-20 pb-12">
-               <div class="sl-container">
-                    <h2 class="bg-dark text-light lg:text-xl sm:text-lg text-base px-4 py-2 md:mx-3">Web Design</h2>
-                    <div class="flex flex-wrap justify-center">
-                         <div class="md:w-1/2 w-full md:px-3 mt-6">
-                              <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 106.jpg" alt="projects" class="rounded-3xl">
-                                   <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
-                              </div>
-                         </div>
-                         <div class="md:w-1/2 w-full md:px-3 mt-6">
-                              <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 107.jpg" alt="projects" class="rounded-3xl">
-                                   <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
-                              </div>
-                         </div>
-                         <div class="md:w-1/2 w-full md:px-3 mt-6">
-                              <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 108.jpg" alt="projects" class="rounded-3xl">
-                                   <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
-                              </div>
-                         </div>
-                         <div class="md:w-1/2 w-full md:px-3 mt-6">
-                              <div class="group relative cursor-pointer">
-                                   <img src="assets/img/Rectangle 109.jpg" alt="projects" class="rounded-3xl">
-                                   <a href="project.html"
-                                        class="absolute inset-0 backdrop-blur-sm flex items-center justify-center font-bold lg:text-2xl md:text-lg sm:text-base text-sm invisible opacity-0 z-10 group-hover:opacity-100 group-hover:visible">Title
-                                        of The image</a>
-                              </div>
-                         </div>
+                        
                     </div>
                </div>
           </section>
@@ -211,7 +189,7 @@
           <!-- TALK -->
           <section class="lwow fadeIn g:pb-40 md:pb-20 pb-12 max-w-xl w-full text-center mx-auto">
                <p class="font-light md:mb-12 sm:mb-8 xs:mb-4 mb-2 px-6">Interested in exploring further or learning more about my projects ? Feel free to reach out and get in touch !</p>
-               <a href="contact.html" class="bg-slate text-light border-2 border-slate py-2 px-6 rounded-md hover:bg-light hover:text-slate">Lets talk</a>
+               <a href="contact.html" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">Lets talk together</a>
           </section>
           <!-- TALK -->
      </main>
@@ -241,7 +219,7 @@
      <!-- FOOTER -->
      
      <!-- ANIMATION -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/jquery/jquery-3.6.0.js"></script>
      <script src="assets/vendor/wowJS/wow.min.js"></script>
      <script>
           // WOW JS ANIMATION ADDED

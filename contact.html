@@ -3,11 +3,11 @@
 
 <head>
      <meta charset="UTF-8">
-     <meta x-model="data.viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <!-- TITLE & FAVICON -->
      <link rel="icon" href="./assets/img/logo.png" />
-     <title>Ikino || Services</title>
+     <title>Ikino || Work with me</title>
 
      <!-- FONT AWESOME -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -93,8 +93,8 @@
           }
      </script>
      <style>
-          input[type="radio"],
-          input[type="checkbox"] {
+          input[type="radio"], 
+          input[type="checkbox"]{
                appearance: none;
                position: relative;
                background-color: #F0EAE1;
@@ -125,32 +125,30 @@
           input[type="checkbox"]:checked::before {
                transform: scale(1);
           }
-
           @media (max-width: 480px) {
-
-               input[type="radio"],
-               input[type="checkbox"] {
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 15%;
-               }
+          input[type="radio"], 
+          input[type="checkbox"]{
+               width: 12px;
+               height: 12px;
+               border-radius: 15%;
+          }
           }
      </style>
 </head>
 
-<body x-data="{sidebar: false}">
+<body x-cloak x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
                <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
                <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
-               <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="about.html" class="font-semibold py-3 px-4 hover:text-light/85">About me</a></li>
                <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
                <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
-               <li><a href="contact.html" class="font-semibold py-3 px-4 hover:text-light/85">Work with me</a></li>
+               <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
           </ul>
      </aside>
      <!-- SIDEBAR -->
@@ -167,20 +165,20 @@
                     <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
                     <li><a href="contact.html" class="font-semibold mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
-               <div x-data="{active: false, show: 'French'}">
+               <div x-data="{active: false}">
                     <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
-                         <span x-text="show"></span>
+                         <span>English</span>
                          <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path
                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                          </svg>
                     </button>
                     <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
-                         <li @click="show = 'English'; active = !active" class="py-1.5 px-5 cursor-pointer">English</li>
-                         <li @click="show = 'French'; active = !active" class="py-1.5 px-5 cursor-pointer">French</li>
+                         <li class="py-1.5 px-5 cursor-pointer">English</li>
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/fn/contact.html">French</a></li>
                     </ul>
                </div>
-               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
@@ -190,7 +188,7 @@
      <main class="mt-16 text-dark bg-light">
           <!-- HERO -->
           <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-72 md:py-40 py-20 before:absolute before:inset-0 before:bg-dark/85"
-               style="background-image: url(assets/img/hero-3.png);">
+               style="background-image: url(assets/img/work\ with\ me.png);">
                <div class="wow fadeInDown relative sl-container text-center z-10">
                     <h2 class="lg:text-5xl md:text-3xl sm:text-2xl text-xl font-bold md:mb-6 mb-4">LETS GET TO KNOW EACH OTHER</h2>
                     <p class="lg:text-lg md:text-base sm:text-sm font-light">Ready to launch your project? Contact us, and we will respond within 24 hours.</p>
@@ -377,9 +375,9 @@
           <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
      </footer>
      <!-- FOOTER -->
-
+     
      <!-- ANIMATION -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/jquery/jquery-3.6.0.js"></script>
      <script src="assets/vendor/wowJS/wow.min.js"></script>
      <script>
           // WOW JS ANIMATION ADDED

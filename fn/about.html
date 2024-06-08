@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- TITLE & FAVICON -->
+     <link rel="icon" href=" ../assets/img/logo.png" />
+     <title>Ikino || About me</title>
+
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+     <!-- GOOGLE FONTS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+     <!-- TAILWIND CSS -->
+     <link href="../assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="../assets/vendor/wowJS/animate.css">
+     <!-- ALPINE JS -->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-cloak x-data="{sidebar: false}">
+
+     <!-- SIDEBAR -->
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+          <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src=" ../assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
+          <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
+               <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src=" ../assets/img/logo.png" alt="logo"></a></li>
+               <li><a href="index.html" class="py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
+               <li><a href="about.html" class="font-semibold py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
+          </ul>
+     </aside>
+     <!-- SIDEBAR -->
+
+     <!-- HEADER -->
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="font-semibold mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src=" ../assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
+               </ul>
+               <div x-data="{active: false}">
+                    <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
+                          <span>French</span>
+                         <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                              <path
+                                   d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                         </svg>
+                    </button>
+                    <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/about.html">English</a></li>
+                         <li class="py-1.5 px-5 cursor-pointer">French</li>
+                    </ul>
+               </div>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src=" ../assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src=" ../assets/img/bars.svg" alt="bar" class="w-5"></button>
+          </nav>
+     </header>
+     <!-- HEADER -->
+
+     <!-- MAIN -->
+     <main class="mt-16 text-dark bg-light">
+          <!-- ABOUT -->
+          <section class="text-dark bg-gray md:py-20 py-12">
+               <div class="sl-container">
+                    <div class="flex flex-wrap items-center">
+                         <div class="wow fadeInLeft md:block hidden lg:w-2/5 md:w-1/2 w-full md:pr-10"><img src=" ../assets/img/imageaboutme.png" alt=""></div>
+                         <div class="wow fadeInRight lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
+                              <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-6 mb-4 font-semibold">Ikino Design Co</h2>
+                              <p class="font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Welcome to my portfolio. I'm Ikino, a skilled web and graphic designer, honored with distinction upon graduation. With a wealth of experience, I specialize in crafting intuitive web interfaces and impactful graphic designs. My dedication to artistic excellence is evident through a collection of successful projects, demonstrating my knack for translating clients' unique requirements into remarkable visual creations. Dive into this portfolio to explore my unique expertise, where each project embodies a blend of creativity and functionality, capturing attention and delivering a memorable visual journey.</p>
+                              <a href="contact.html" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">Lets talk together </a>
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <!-- ABOUT -->
+
+          <!-- BANNER -->
+          <section class="wow fadeInUp bg-dark text-light text-center lg:text-xl md:text-lg sm:text-sm md:py-12 sm:py-7 xs:py-5 py-3">
+               <h2 class="lg:w-3/5 mx-auto">“ If you're not failing every now and again, it's a sign you're not doing anything very innovative. “</h2>
+          </section>
+          <!-- BANNER -->
+
+          <!-- BLOG -->
+          <section class="md:py-20 py-10">
+               <div class="wow fadeInDown sl-container">
+                    <div class="flex flex-wrap justify-center">
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                                   <img src=" ../assets/img/Rectangle 68.jpg" alt="blog" class="rounded-t-3xl h-40">
+                                   <div class="md:p-6 p-4 md:pt-4 pt-2">
+                                        <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                             <span>23 février 2024</span>
+                                             <span>Brussels</span>
+                                        </p>
+                                        <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-2.5 mb-1">Blog Article : coming soon</h3>
+                                        <p class="md:text-sm sl-line-text md:mb-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet,
+                                             consectetur adipiscing elit, sed do...</p>
+                                        <a href="" class="bg-slate text-light md:text-xs py-2 px-6 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Read more</a>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                                   <img src=" ../assets/img/Rectangle 71.jpg" alt="blog" class="rounded-t-3xl h-40">
+                                   <div class="md:p-6 p-4 md:pt-4 pt-2">
+                                        <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                             <span>23 février 2024</span>
+                                             <span>Brussels</span>
+                                        </p>
+                                        <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-2.5 mb-1">Blog Article : coming soon</h3>
+                                        <p class="md:text-sm sl-line-text md:mb-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet,
+                                             consectetur adipiscing elit, sed do...</p>
+                                        <a href="" class="bg-slate text-light md:text-xs py-2 px-6 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Read more</a>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                              <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                                   <img src=" ../assets/img/Rectangle 75.jpg" alt="blog" class="rounded-t-3xl h-40">
+                                   <div class="md:p-6 p-4 md:pt-4 pt-2">
+                                        <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                             <span>23 février 2024</span>
+                                             <span>Brussels</span>
+                                        </p>
+                                        <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-2.5 mb-1">Blog Article : coming soon</h3>
+                                        <p class="md:text-sm sl-line-text md:mb-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet,
+                                             consectetur adipiscing elit, sed do...</p>
+                                        <a href="" class="bg-slate text-light md:text-xs py-2 px-6 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Read more</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="text-center md:mt-10 sm:mt-6 mt-2"><a href="blog.html" class="underline">Go to the blog</a></div>
+               </div>
+          </section>
+          <!-- BLOG -->
+     </main>
+     <!-- MAIN -->
+
+     <!-- FOOTER -->
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
+          <div class="flex flex-wrap items-center max-w-screen-xl">
+               <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
+                    <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src=" ../assets/img/logo-sm.png" alt="logo"></a>
+               </div>
+               <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
+                    <ul class="flex flex-wrap">
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="md:text-xs hover:opacity-75">Home</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="md:text-xs hover:opacity-75">Work with me</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="md:text-xs hover:opacity-75">Instagram</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="md:text-xs hover:opacity-75">Portfolio</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="md:text-xs hover:opacity-75">Blog</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Branding</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Web Design</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="md:text-xs hover:opacity-75">About me</a></li>
+                    </ul>
+               </div>
+          </div>
+          <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
+     </footer>
+     <!-- FOOTER -->
+     
+     <!-- ANIMATION -->
+     <script src="../assets/vendor/jquery/jquery-3.6.0.js"></script>
+     <script src="../assets/vendor/wowJS/wow.min.js"></script>
+     <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+     </script>
+</body>
+
+</html>

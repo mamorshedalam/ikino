@@ -23,10 +23,10 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="{sidebar: false}">
+<body x-cloak x-data="{sidebar: false}">
 
      <!-- SIDEBAR -->
-     <aside :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
           <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src="assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
           <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
                <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src="assets/img/logo.png" alt="logo"></a></li>
@@ -52,20 +52,20 @@
                     <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
                     <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
                </ul>
-               <div x-data="{active: false, show: 'French'}">
+               <div x-data="{active: false}">
                     <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
-                         <span x-text="show"></span>
+                         <span>English</span>
                          <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path
                                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                          </svg>
                     </button>
                     <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
-                         <li @click="show = 'English'; active = !active" class="py-1.5 px-5 cursor-pointer">English</li>
-                         <li @click="show = 'French'; active = !active" class="py-1.5 px-5 cursor-pointer">French</li>
+                         <li class="py-1.5 px-5 cursor-pointer">English</li>
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/fn/service.html">French</a></li>
                     </ul>
                </div>
-               <a href="" class="md:hidden block py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src="assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
                <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src="assets/img/bars.svg" alt="bar" class="w-5"></button>
           </nav>
      </header>
@@ -75,13 +75,67 @@
      <main class="mt-16 text-dark bg-light">
           <!-- HERO -->
           <section class="relative text-light bg-cover bg-center bg-no-repeat lg:py-60 md:py-40 py-20 before:absolute before:inset-0 before:bg-slate/70"
-               style="background-image: url(assets/img/hero-2.jpg);">
+               style="background-image: url(assets/img/work\ with\ me.png);">
                <div class="wow fadeInDown relative sl-container text-center z-10">
                     <h2 class="xl:text-5xl md:text-3xl sm:text-xl text-lg font-bold md:mb-6 mb-4">Transforming visions into captivating realities </h2>
                     <p class="lg:text-lg md:text-base text-sm font-light">Discover how my design expertise can elevate your brand to new heights.</p>
                </div>
+               
           </section>
+
           <!-- HERO -->
+
+
+           <!-- MARQUEE -->
+ <section class="overflow-hidden bg-dark text-light">
+     <div class="sl-marque-text">
+          <ul>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+          </ul>
+     </div>
+</section>
+<!-- MARQUEE -->
+          
+
+
+
 
           <!-- BANDING -->
           <section class="md:py-20 sm:py-12 py-9">
@@ -89,18 +143,9 @@
                     <div class="flex flex-wrap">
                          <div class="wow fadeInLeft lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pr-20">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">Branding</h2>
-                              <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore
-                                   veritatis et
-                                   quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore
-                                   veritatis et
-                                   quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore
-                                   veritatis et
-                                   quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
+                              <p class="md:mb-6 mb-4 font-light">In our branding service, we partner with you to craft a distinctive visual identity for your business. We delve deep into understanding your company's values, mission, and target audience. From conceptualizing and designing your logo to selecting the perfect color palette that resonates with your brand's personality, we collaborate closely with you every step of the way.</p>
+                              <p class="md:mb-6 mb-4 font-light">Our goal is to ensure that your brand's essence is accurately captured and consistently portrayed across all your communication platforms. By establishing a cohesive and compelling visual identity, you not only differentiate yourself in a competitive market but also leave a lasting impression on your audience.</p>
+                              <p class="md:mb-6 mb-4 font-light">With our branding expertise, you gain more than just a logo or a set of colors – you gain a powerful tool to connect with your customers on a deeper level. </p>
                               <div class="text-right"><a href="contact.html" class="text-light bg-dark md:py-2 py-1.5 md:px-6 px-4 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                          <div class="wow fadeInRight lg:w-3/5 lg:block hidden">
@@ -115,8 +160,8 @@
           <!-- BANDING -->
 
           <!-- BANNER -->
-          <section class="wow fadeInUp bg-stone text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
-               <h2>“A Glimpse into My Projects”</h2>
+          <section class="wow fadeInUp bg-stone text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3 font-light">
+               <h2>"Creativity is the greatest rebellion in existence"</h2>
           </section>
           <!-- BANNER -->
 
@@ -129,12 +174,10 @@
                          </div>
                          <div class="wow fadeInRight lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pl-20 text-right">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">Print</h2>
-                              <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
+                              <p class="md:mb-6 mb-4 font-light">
+                                   Our graphic design service is your partner in transforming your creative concepts into tangible print materials that captivate your audience. Whether you require eye-catching business cards, informative brochures, attention-grabbing posters, or any other printed collateral, we excel in crafting designs that not only showcase your brand's identity but also leave a lasting impression.</p>
+                              <p class="md:mb-6 mb-4 font-light">With our professional expertise, we meticulously pay attention to every detail, ensuring that each graphic creation is of the highest quality. We understand the importance of consistency in branding, and thus, we work closely with you to ensure that every design element reflects the essence of your business.</p>
+                              <p class="md:mb-6 mb-4 font-light">By combining creativity with strategic thinking, we create designs that not only appeal to your target audience but also effectively communicate your brand message.</p>
                               <div class="text-left"><a href="contact.html" class="text-light bg-dark md:py-2 py-1 md:px-6 px-4 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                     </div>
@@ -146,8 +189,8 @@
           <!-- BANDING -->
 
           <!-- BANNER -->
-          <section class="wow fadeInUp bg-slate text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
-               <h2>“A Glimpse into My Projects”</h2>
+          <section class="wow fadeInUp bg-slate text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3 font-light">
+               <h2>"Design is thinking made visual"</h2>
           </section>
           <!-- BANNER -->
 
@@ -157,18 +200,9 @@
                     <div class="flex flex-wrap">
                          <div class="wow fadeInLeft lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pr-20">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">Webdesign</h2>
-                              <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore
-                                   veritatis et
-                                   quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore
-                                   veritatis et
-                                   quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore
-                                   veritatis et
-                                   quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
+                              <p class="md:mb-6 mb-4 font-light">Our dedicated web design team possesses extensive expertise in crafting a wide array of visual assets for your online platform. From meticulously designed graphic mockups encompassing UX/UI elements to intricate wireframes and fully interactive prototypes, we offer comprehensive solutions tailored to the unique needs of your website. By seamlessly integrating aesthetics with functionality, we strive to deliver captivating online experiences that resonate with your audience</p>
+                              <p class="md:mb-6 mb-4 font-light">We go beyond mere design and focus on creating immersive environments that not only engage users but also foster lasting connections. Our commitment to delivering personalized designs ensures that every aspect of your website aligns cohesively with your brand identity, reinforcing your online presence and setting you apart from the competition.</p>
+                              
                               <div class="text-right"><a href="contact.html" class="text-light bg-dark md:py-2 py-1 md:px-6 px-4 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                          <div class="wow fadeInRight lg:w-3/5 lg:block hidden">
@@ -183,8 +217,8 @@
           <!-- BANDING -->
 
           <!-- BANNER -->
-          <section class="wow fadeInUp bg-stone text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3">
-               <h2>“A Glimpse into My Projects”</h2>
+          <section class="wow fadeInUp bg-stone text-light text-center lg:text-2xl md:text-xl sm:text-base text-sm md:py-12 sm:py-7 xs:py-5 py-3 font-light">
+               <h2>"No masterpiece was ever created by a lazy artist"</h2>
           </section>
           <!-- BANNER -->
 
@@ -197,12 +231,11 @@
                          </div>
                          <div class="wow fadeInRight lg:w-2/5 md:w-3/5 w-4/5 md:text-sm lg:pl-20 text-right">
                               <h2 class="font-bold lg:text-3xl md:text-2xl text-xl uppercase lg:mb-9 md:mb-6 mb-4">SOCIAL MEDIA</h2>
-                              <p class="md:mb-6 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
-                              <p class="md:mb-6 mb-4">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                   inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsa</p>
+                              <p class="md:mb-6 mb-4 font-light">
+                                   With our visual design service tailored specifically for social media platforms, you have the opportunity to invigorate and strengthen your online presence through visually striking and professionally crafted graphics. We specialize in creating bespoke visuals that not only captivate your target audience but also enhance the visibility and recognition of your brand across relevant social media channels.
+                              </p>
+                              <p class="md:mb-6 mb-4 font-light">Whether you require graphics for regular posts, eye-catching advertisements, or impactful special campaigns, our team is dedicated to providing you with visually compelling content that sets you apart from the competition and encourages meaningful engagement with your audience. From attention-grabbing imagery to thoughtfully designed infographics, we are committed to delivering visuals that resonate with your audience and leave a lasting impression.</p>
+                              
                               <div class="text-left"><a href="contact.html" class="text-light bg-dark md:py-2 py-1 md:px-6 px-4 rounded-md hover:bg-light hover:text-dark border-2 border-dark md:text-sm">Let’s work together</a></div>
                          </div>
                     </div>
@@ -212,8 +245,190 @@
                </div>
           </section>
           <!-- BANDING -->
+
+ <!-- MARQUEE -->
+ <section class="overflow-hidden bg-slate text-light">
+     <div class="sl-marque-text">
+          <ul>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+               <li>Let's grow your brand</li>
+          </ul>
+     </div>
+</section>
+<!-- MARQUEE -->
+
+<!-- BLOG -->
+<section class="py-20">
+     <div class="sl-container">
+          <div class="wow fadeInUp text-center mb-12">
+               <h2 class="lg:text-4xl md:text-2xl sm:text-xl text-lg font-bold md:mb-4 mb-2">Our Services & Pricing </h2>
+               <p class="lg:text-xl md:text-lg sm:text-base text-sm font-light">Prices may vary depending on your requirements. For an accurate quote, please contact us via the contact form</p>
+          </div>
+          <div class="flex flex-wrap justify-center">
+               <div class="wow fadeInUp lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                    <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                         
+                         <div class="md:p-6 p-4 md:pt-4 pt-2">
+                              <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                  
+                              </p>
+                              <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-4 mb-2.5">Beginner's Bundle</h3>
+                              <p class="md:text-sm sl-line-text mb-6">Creation of your logo along with its color palette. (2 logo proposals).</p>
+                              <p class="md:text-sm sl-line-text mb-6">Typographic logo: €250 || Illustrated logo: €400</p>
+                              <p class="md:text-sm sl-line-text mb-6"> Logo variations in color, black & white</p>
+
+                              <p class="md:text-sm sl-line-text mb-6">We provide you with the logo book as well as the logo in the necessary formats for web and print use.</p>
+                              <p class="md:text-sm sl-line-text mb-6"> </p>
+                              <a href="contact.html" class="bg-slate text-light md:text-xs sm:py-2 py-1 sm:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate">From 250 to 400€</a>
+                         </div>
+                    </div>
+               </div>
+               <div class="wow fadeInUp lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                    <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                       
+                         <div class="md:p-6 p-4 md:pt-4 pt-2">
+                              <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                  
+                              </p>
+                              <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-4 mb-2.5">Pack Visual Identity (pro)</h3>
+                              <p class="md:text-sm sl-line-text mb-6">Beginner's Bundle pack + Logo variations in various formats.</p>
+                              <p class="md:text-sm sl-line-text mb-6">Main and Secondary Color Palette </p>
+                              <p class="md:text-sm sl-line-text mb-6">Complete Branding Guidelines</p>
+                              <p class="md:text-sm sl-line-text mb-6">Resource Repository: Photos, Illustrations, and More</p>
+                              <p class="md:text-sm sl-line-text mb-6">Selection of 3 Additional Visuals of Your Choice (Print/Social Media)
+                              </p>
+
+                             
+                              <a href="contact.html" class="bg-slate text-light md:text-xs sm:py-2 py-1 sm:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate">800€</a>
+                         </div>
+                    </div>
+               </div>
+               <div class="wow fadeInUp lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                    <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                         <div class="md:p-6 p-4 md:pt-4 pt-2">
+                              <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                  
+                              </p>
+                              <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-4 mb-2.5">Web Design (UX/UI)</h3>
+                              <p class="md:text-sm sl-line-text mb-6">Site tree structure and navigation structure planning.</p>
+                              <p class="md:text-sm sl-line-text mb-6">Wireframes and website schematics. </p>
+                              <p class="md:text-sm sl-line-text mb-6">Visual website mockup design.</p>
+                              <p class="md:text-sm sl-line-text mb-6">Selection of color palette, typography, and visual elements to maintain brand consistency.</p>
+                              <p class="md:text-sm sl-line-text mb-6">Development of interactive prototypes. </p>
+
+                             
+                              <a href="contact.html" class="bg-slate text-light md:text-xs sm:py-2 py-1 sm:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate">From 500€</a>
+                         </div>
+                    </div>
+               </div>
+               <div class="wow fadeInUp lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                    <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                         <div class="md:p-6 p-4 md:pt-4 pt-2">
+                              <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                  
+                              </p>
+                              <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-4 mb-2.5">Print</h3>
+                              <p class="md:text-sm sl-line-text mb-6">Business card : 40€ (2 proposals)</p>
+                              <p class="md:text-sm sl-line-text mb-6">Leaflets : 40€ (80€ for double-sided printing.) </p>
+                              <p class="md:text-sm sl-line-text mb-6">Advertising posters (Starting from 120€)</p>
+                              <p class="md:text-sm sl-line-text mb-6">Storefront: Customized quote.</p>
+                              <p class="md:text-sm sl-line-text mb-6">For all other inquiries, please contact us. </p>
+
+                             
+                              <a href="contact.html" class="bg-slate text-light md:text-xs sm:py-2 py-1 sm:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Variable pricing</a>
+                         </div>
+                    </div>
+               </div>
+               <div class="wow fadeInUp lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                    <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                         <div class="md:p-6 p-4 md:pt-4 pt-2">
+                              <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                  
+                              </p>
+                              <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-4 mb-2.5">Packaging</h3>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6">Packaging requires a customized quote, please contact us via the contact form.</p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"> </p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+
+                             
+                              <a href="" class="bg-slate text-light md:text-xs sm:py-2 py-1 sm:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Variable pricing</a>
+                         </div>
+                    </div>
+               </div>
+               <div class="wow fadeInUp lg:w-1/3 md:w-1/2 w-full lg:px-9 xs:px-6 sm:mb-9 mb-5">
+                    <div class="rounded-3xl border-4 border-dark max-w-xs mx-auto">
+                         <div class="md:p-6 p-4 md:pt-4 pt-2">
+                              <p class="md:text-sm font-light w-full flex justify-between items-center md:mb-4 mb-2.5">
+                                  
+                              </p>
+                              <h3 class="font-semibold lg:text-xl sm:text-lg text-base md:mb-4 mb-2.5">Social Media</h3>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"> Visuals for social media require a customized quote, please contact us via the contact form.</p>
+                              <p class="md:text-sm sl-line-text mb-6"> </p>
+                              <p class="md:text-sm sl-line-text mb-6"></p>
+                              <p class="md:text-sm sl-line-text mb-6"></p> </p>
+
+                             
+                              <a href="contact.html" class="bg-slate text-light md:text-xs sm:py-2 py-1 sm:px-6 px-4 rounded-md hover:bg-light hover:text-slate border-2 border-slate">Variable pricing</a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+<!-- BLOG -->
+</main>
+<!-- MAIN -->
+
+
      </main>
      <!-- MAIN -->
+
+ 
+
 
      <!-- FOOTER -->
      <footer class="wow fadeInDown pt-5 md:text-left text-center">
@@ -239,7 +454,7 @@
      <!-- FOOTER -->
      
      <!-- ANIMATION -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/vendor/jquery/jquery-3.6.0.js"></script>
      <script src="assets/vendor/wowJS/wow.min.js"></script>
      <script>
           // WOW JS ANIMATION ADDED

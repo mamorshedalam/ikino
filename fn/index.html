@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- TITLE & FAVICON -->
+     <link rel="icon" href=" ../assets/img/logo.png" />
+     <title>Ikino || Home</title>
+
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+     <!-- GOOGLE FONTS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+     <!-- SWIPER CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+     <!-- TAILWIND CSS -->
+     <link href="../assets/css/output.css" rel="stylesheet">
+     <!-- ANIMATION -->
+     <link rel="stylesheet" href="../assets/vendor/wowJS/animate.css">
+     <!-- ALPINE JS -->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-cloak x-data="{sidebar: false}">
+
+     <!-- SIDEBAR -->
+     <aside x-cloak  :class="sidebar ? 'opacity-100 visible':'opacity-0 invisible'" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] sl-animation-fade">
+          <button @click="sidebar = !sidebar" class="absolute top-2 right-4 w-6 h-6 rounded-full bg-stone border border-light"><img src=" ../assets/img/xmark.svg" alt="close" class="w-3 mx-auto"></button>
+          <ul :class="sidebar ? 'w-80':'w-0'" class="bg-dark py-6 px-4 max-w-[80%] h-full sl-animation">
+               <li><a href="index.html" class="block mx-auto w-12 mb-4"><img src=" ../assets/img/logo.png" alt="logo"></a></li>
+               <li><a href="index.html" class="font-semibold py-3 px-4 hover:text-light/85">Home</a></li>
+               <li><a href="portfolio.html" class="py-3 px-4 hover:text-light/85">Portfolio</a></li>
+               <li><a href="about.html" class="py-3 px-4 hover:text-light/85">About me</a></li>
+               <li><a href="service.html" class="py-3 px-4 hover:text-light/85">Services</a></li>
+               <li><a href="blog.html" class="py-3 px-4 hover:text-light/85">Blog</a></li>
+               <li><a href="contact.html" class="py-3 px-4 hover:text-light/85">Work with me</a></li>
+          </ul>
+     </aside>
+     <!-- SIDEBAR -->
+
+     <!-- HEADER -->
+     <header class="fixed top-0 left-0 w-full bg-dark z-50">
+          <nav>
+               <ul class="md:flex hidden items-center justify-center text-sm">
+                    <li><a href="index.html" class="font-semibold mr-10 hover:text-light/85">Home</a></li>
+                    <li><a href="portfolio.html" class="mr-10 hover:text-light/85">Portfolio</a></li>
+                    <li><a href="about.html" class="mr-10 hover:text-light/85">About me</a></li>
+                    <li><a href="index.html"><img src=" ../assets/img/logo-sm.png" alt="logo" class="w-[50px] mr-10"></a></li>
+                    <li><a href="service.html" class="mr-10 hover:text-light/85">Services</a></li>
+                    <li><a href="blog.html" class="mr-10 hover:text-light/85">Blog</a></li>
+                    <li><a href="contact.html" class="mr-10 hover:text-light/85">Work with me</a></li>
+               </ul>
+               <div x-data="{active: false}">
+                    <button @click="active = !active" class="absolute top-1/2 md:right-6 right-3 -translate-y-1/2 md:text-xs bg-slate py-1.5 px-2.5 rounded-md flex items-center gap-1.5">
+                          <span>French</span>
+                         <svg class="fill-light w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                              <path
+                                   d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                         </svg>
+                    </button>
+                    <ul :class="active ? 'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="absolute top-full w-fit md:right-6 right-3 bg-slate rounded md:text-xs">
+                         <li class="py-1.5 px-5 cursor-pointer"><a href="/index.html">English</a></li>
+                         <li class="py-1.5 px-5 cursor-pointer">French</li>
+                    </ul>
+               </div>
+               <a href="/" class="md:hidden block w-fit mx-auto py-2"><img src=" ../assets/img/logo-sm.png" alt="logo" class="w-12 mx-auto"></a>
+               <button @click="sidebar = !sidebar" class="absolute left-5 top-1/2 -translate-y-1/2 md:hidden block"><img src=" ../assets/img/bars.svg" alt="bar" class="w-5"></button>
+          </nav>
+     </header>
+     <!-- HEADER -->
+
+     <!-- MAIN -->
+     <main class="mt-14">
+          <!-- HERO -->
+          <section class="wow fadeIn bg-cover bg-center bg-no-repeat lg:pt-72 md:pt-32 md:pb-60 py-12" style="background-image: url( ../assets/img/Home-image.jpg);">
+               <div class="sl-container text-center">
+                    <h1 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl leading-relaxed lg:mb-20 md:mb-16 sm:mb-8 mb-5">Let’s Create Inspiring Designs With Lasting Impression</h1>
+                    <a href="contact.html" class="bg-dark py-2 px-6 rounded-md hover:bg-light hover:text-dark">Let’s work together</a>
+               </div>
+          </section>
+          <!-- HERO -->
+
+          <!-- MARQUEE -->
+          <section class="overflow-hidden">
+               <div class="sl-marque-text">
+                    <ul>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                         <li>Available for work</li>
+                    </ul>
+               </div>
+          </section>
+          <!-- MARQUEE -->
+
+          <!-- SLIDER -->
+          <section class="bg-stone sm:py-5 py-3">
+               <div class="sl-marque-slide">
+                    <ul>
+                         <li><img src=" ../assets/img/logo1.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo2.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo3.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo4.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo5.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo6.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo7.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo8.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo9.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo1.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo2.png" alt="brand"></li>
+                         <li><img src=" ../assets/img/logo3.png" alt="brand"></li>
+                         <li class="md:block hidden"><img src=" ../assets/img/logo5.png" alt="brand"></li>
+                         <li class="md:block hidden"><img src=" ../assets/img/logo6.png" alt="brand"></li>
+                         <li class="md:block hidden"><img src=" ../assets/img/logo7.png" alt="brand"></li>
+                         <li class="md:block hidden"><img src=" ../assets/img/logo8.png" alt="brand"></li>
+                         <li class="md:block hidden"><img src=" ../assets/img/logo9.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo1.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo2.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo3.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo4.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo5.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo6.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo7.png" alt="brand"></li>
+                         <li class="lg:block hidden"><img src=" ../assets/img/logo9.png" alt="brand"></li>
+                         <li class="xl:block hidden"><img src=" ../assets/img/logo1.png" alt="brand"></li>
+                         <li class="xl:block hidden"><img src=" ../assets/img/logo2.png" alt="brand"></li>
+                         <li class="xl:block hidden"><img src=" ../assets/img/logo3.png" alt="brand"></li>
+                         <li class="xl:block hidden"><img src=" ../assets/img/logo4.png" alt="brand"></li>
+                         <li class="xl:block hidden"><img src=" ../assets/img/logo5.png" alt="brand"></li>
+                         <li class="xl:block hidden"><img src=" ../assets/img/logo6.png" alt="brand"></li>
+                    </ul>
+               </div>
+          </section>
+          <!-- SLIDER -->
+
+          <!-- ABOUT -->
+          <section class="text-dark bg-gray md:py-20 py-12">
+               <div class="sl-container">
+                    <div class="flex flex-wrap items-center">
+                         <div class="wow fadeInLeft lg:w-3/5 md:w-1/2 w-full md:pr-3 md:text-left text-center">
+                              <h2 class="lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-6 mb-4 font font-medium">Ikino Design Co</h2>
+                              <p class="lg:w-4/5 font-light md:text-justify md:mb-12 sm:mb-8 mb-5">Welcome to my portfolio. I'm Ikino, a skilled web and graphic designer, honored with distinction upon graduation. With a wealth of experience, I specialize in crafting intuitive web interfaces and impactful graphic designs.</p>
+                              <a href="about.html" class="bg-slate text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-dark">More about me</a>
+                         </div>
+                         <div class="wow fadeInRight md:block hidden lg:w-2/5 md:w-1/2 w-full md:pl-3"><img src=" ../assets/img/imageaboutme.png" alt=""></div>
+                    </div>
+               </div>
+          </section>
+          <!-- ABOUT -->
+
+          <!-- MARQUEE -->
+          <section class="overflow-hidden bg-neutral">
+               <div class="sl-marque-text">
+                    <ul>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                         <li>Branding</li>
+                         <li>Web Design</li>
+                         <li>Packaging</li>
+                         <li>Print</li>
+                         <li>Social Media</li>
+                    </ul>
+               </div>
+          </section>
+          <!-- MARQUEE -->
+
+          <!-- SERVICE -->
+          <section class="bg-neutral lg:pt-40 md:py-20 py-12">
+               <div class="sl-container">
+                    <div class="md:w-full w-3/5 ml-auto md:pl-0 xs:pl-5 pl-2">
+                         <h2 class="wow fadeInDown font-light lg:text-7xl md:text-4xl sm:text-xl text-lg md:mb-12 sm:mb-8 mb-5">What do we provide</h2>
+                         <div class="flex flex-wrap items-center">
+                              <div class="wow fadeInLeft md:block hidden lg:w-2/5 w-1/2"><img src=" ../assets/img/provide image.png" alt=""></div>
+                              <div class="wow fadeInRight lg:w-3/5 md:w-1/2 w-full lg:pl-10 md:pl-6">
+                                   <ul class="font-light" x-data="{active: 0}">
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 1 ? active = 0 : active = 1" :class="active == 1 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left lg:text-xl sm:text-base text-sm border-light sm:py-2 py-1">
+                                                  Branding
+                                                  <span><img class="lg:w-5 sm:w-3 w-2.5" src=" ../assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 1 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="md:text-sm bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Creating a
+                                                  strong and
+                                                  cohesive brand identity is
+                                                  essential for standing out in a competitive market. At IkinoDesignCo, I offer comprehensive expertise in branding to give your business a distinctive
+                                                  and
+                                                  memorable image.</p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 2 ? active = 0 : active = 2" :class="active == 2 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left lg:text-xl sm:text-base text-sm border-light sm:py-2 py-1">
+                                                  Print
+                                                  <span><img class="lg:w-5 sm:w-3 w-2.5" src=" ../assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 2 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="md:text-sm bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Print is a
+                                                  crucial
+                                                  aspect of your brand strategy. From
+                                                  designing business cards to flyers, posters, and informative brochures, I strive to bring your ideas to life on paper.</p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 3 ? active = 0 : active = 3" :class="active == 3 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left lg:text-xl sm:text-base text-sm border-light sm:py-2 py-1">
+                                                  Web Design
+                                                  <span><img class="lg:w-5 sm:w-3 w-2.5" src=" ../assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 3 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="md:text-sm bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Your website
+                                                  is often
+                                                  the first point of contact between
+                                                  your brand and potential customers. With a user-centered approach, I create intuitive and aesthetically pleasing websites that enhance your brand
+                                                  image,
+                                                  promote user engagement, and drive conversions. </p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 4 ? active = 0 : active = 4" :class="active == 4 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left lg:text-xl sm:text-base text-sm border-light sm:py-2 py-1">
+                                                  Packaging
+                                                  <span><img class="lg:w-5 sm:w-3 w-2.5" src=" ../assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 4 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="md:text-sm bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Attractive
+                                                  packaging is
+                                                  crucial for grabbing consumers'
+                                                  attention in a competitive environment. I design innovative and aesthetically pleasing packaging that reflects your brand essence and captivates your
+                                                  target audience at first glance. </p>
+                                        </li>
+                                        <li class="md:mb-6 mb-2.5 overflow-hidden">
+                                             <button @click="active == 5 ? active = 0 : active = 5" :class="active == 5 ? 'border-none' : 'border-b'"
+                                                  class="w-full flex items-center justify-between text-left lg:text-xl sm:text-base text-sm border-light sm:py-2 py-1">
+                                                  Social Media
+                                                  <span><img class="lg:w-5 sm:w-3 w-2.5" src=" ../assets/img/arrow_down.svg" alt=""></span>
+                                             </button>
+                                             <p :class="active == 5 ? 'max-h-80 md:py-6 py-2':'max-h-0 py-0'" class="md:text-sm bg-light/50 text-white md:rounded-xl rounded md:px-6 px-2">Social media
+                                                  provides a
+                                                  vast platform to promote and
+                                                  grow your brand. With my expertise in graphic design and content strategy, I create compelling visuals and engaging content that energize your online
+                                                  presence and strengthen your reputation on social platforms. By combining creativity with data analysis, I help you maximize your impact and generate
+                                                  meaningful interactions with your audience. </p>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="wow fadeInLeft absolute md:hidden block left-0 top-0 w-2/5 h-full">
+                         <img src=" ../assets/img/provide image.png" alt="" class="h-full object-cover">
+                    </div>
+               </div>
+          </section>
+          <!-- SERVICE -->
+
+          <!-- REVIEW -->
+          <section class="bg-slate text-dark text-center py-6">
+               <div class="bg-light md:py-20 py-12">
+                    <h2 class="wow fadeInDown lg:text-7xl md:text-4xl sm:text-2xl text-xl md:mb-12 sm:mb-9 mb-5 font-semibold">Client’s love</h2>
+                    <div class="sl-container">
+                         <div class="wow fadeInUp swiper reviewSlider">
+                              <div class="swiper-wrapper">
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/Avis soumia.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/Nawal avis fr.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/avis fr so asbl.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/hmo avis fr.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/avis fr Assidqa.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/Tk consult avis fr.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/Amiel avis fr.png" alt="review"></div>
+                                   <div class="swiper-slide"><img class="max-w-xs mx-auto" src=" ../assets/img/Avis jelly.png" alt="review"></div>
+                              </div>
+                         </div>
+                         <button
+                              class="reviewSlider-prev absolute top-1/2 -translate-y-1/2 md:left-5 left-3 md:w-10 w-8 md:h-10 h-8 md:leading-9 leading-8 text-xs text-center rounded-full bg-dark text-light z-50"><i
+                                   class="fa-solid fa-chevron-left"></i></button>
+                         <button
+                              class="reviewSlider-next absolute top-1/2 -translate-y-1/2 rmd:ight-5 right-3 md:w-10 w-8 md:h-10 h-8 md:leading-9 leading-8 text-xs text-center rounded-full bg-dark text-light z-50"><i
+                                   class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+               </div>
+          </section>
+          <!-- REVIEW -->
+
+          <!-- PROCESS -->
+          <section class="bg-light text-dark overflow-hidden">
+               <div class="wow fadeInLeft md:w-1/2 w-4/5 md:py-20 py-12 md:pr-12 pr-6 sm:pl-6 pl-3">
+                    <h2 class="lg:text-5xl sm:text-2xl text-xl md:mb-9 sm:mb-6 mb-4 font-medium">The Process</h2>
+                    <ul>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">01. Inquire</h3>
+                              <p class="font-light md:text-sm mb-2">We have an initial conversation to discuss your needs, ideas, and goals. I take the time to thoroughly understand your vision in order to offer you the best solutions for your project.</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">02. Planning and Contract</h3>
+                              <p class="font-light md:text-sm mb-2">Once we have established the foundations of your project, we move on to the planning stage. Together, we define deadlines, necessary resources, and project details. Then, we establish an agreement to formalize our collaboration and ensure transparency throughout the process.</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">03. Design</h3>
+                              <p class="font-light md:text-sm mb-2">It's time to unleash creativity! I work to bring your vision to life through unique and impactful designs. I stay in touch with you throughout the process to keep you informed of progress and gather your feedback.</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">04. Delivery</h3>
+                              <p class="font-light md:text-sm mb-2">Once you are satisfied with the result, I proceed to finalize the project, ensuring that all details are perfectly in place. Then, I deliver all final files you need to implement your new design.</p>
+                         </li>
+                         <li class="border-b border-dark md:mb-9 sm:mb-6 mb-4">
+                              <h3 class="lg:text-lg sm:text-base text-sm font-medium mb-2">05. Your brand’s ready to success !!</h3>
+                              <p class="font-light md:text-sm mb-2">And there you have it ! your project is ready to take flight ! With a professional and polished design, your brand is prepared to stand out and captivate your target audience !</p>
+                         </li>
+                    </ul>
+                    <div class="text-right"><a href="contact.html" class="bg-dark text-light md:text-sm py-2 md:px-12 px-9 rounded-md hover:bg-slate">Let’s work together</a></div>
+               </div>
+               <div class="wow fadeInRight absolute right-0 top-0 md:w-1/2 w-1/5 h-full">
+                    <img src=" ../assets/img/process image.png" alt="" class="h-full object-cover">
+               </div>
+          </section>
+          <!-- PROCESS -->
+     </main>
+     <!-- MAIN -->
+
+     <!-- FOOTER -->
+     <footer class="wow fadeInDown pt-5 md:text-left text-center">
+          <div class="flex flex-wrap items-center max-w-screen-xl">
+               <div class="sm:w-auto w-full sm:mb-0 mb-4 pl-6">
+                    <a href="index.html" class="md:w-28 sm:w-20 w-16 md:mr-20"><img src=" ../assets/img/logo-sm.png" alt="logo"></a>
+               </div>
+               <div class="lg:w-1/2 sm:w-0 w-full sm:flex-grow">
+                    <ul class="flex flex-wrap">
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="index.html" class="md:text-xs hover:opacity-75">Home</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="contact.html" class="md:text-xs hover:opacity-75">Work with me</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="" class="md:text-xs hover:opacity-75">Instagram</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="portfolio.html" class="md:text-xs hover:opacity-75">Portfolio</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="blog.html" class="md:text-xs hover:opacity-75">Blog</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Branding</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="service.html" class="md:text-xs hover:opacity-75">Web Design</a></li>
+                         <li class="sm:w-1/4 w-1/2 py-2"><a href="about.html" class="md:text-xs hover:opacity-75">About me</a></li>
+                    </ul>
+               </div>
+          </div>
+          <p class="w-full sm:text-right text-center md:text-xs py-3 pr-6">All rights reserved </p>
+     </footer>
+     <!-- FOOTER -->
+
+     <!-- SCRIPT LINKS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+     <!-- ANIMATION -->
+     <script src="../assets/vendor/jquery/jquery-3.6.0.js"></script>
+     <script src="../assets/vendor/wowJS/wow.min.js"></script>
+     <script>
+          // WOW JS ANIMATION ADDED
+          new WOW().init();
+
+          // SWIPER
+          var swiper = new Swiper(".reviewSlider", {
+               slidesPerView: 1,
+               autoplay: true,
+               autoplaySpeed: 1500,
+               loop: true,
+               navigation: {
+                    nextEl: ".reviewSlider-next",
+                    prevEl: ".reviewSlider-prev",
+               },
+               breakpoints: {
+                    600: {
+                         spaceBetween: 15,
+                         slidesPerView: 2
+                    },
+                    1000: {
+                         spaceBetween: 25,
+                         slidesPerView: 3
+                    },
+                    1300: {
+                         spaceBetween: 50,
+                         slidesPerView: 4
+                    },
+               },
+          });
+     </script>
+</body>
+
+</html>
